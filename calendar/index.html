@@ -1,0 +1,1117 @@
+<!doctype html><html lang="bn"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Suma · Flight24 Content Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Fraunces:ital,opsz,wght@1,72,400;1,72,600&family=Noto+Sans+Bengali:wght@400;600&display=swap');
+* { box-sizing:border-box; margin:0; }
+body { background:#0B3A39; color:#F4F0E0; font-family:'Urbanist','Noto Sans Bengali',sans-serif; }
+header { text-align:center; padding:56px 20px 28px; }
+header h1 { font-family:'Fraunces',serif; font-style:italic; font-weight:600; color:#EBB732; font-size:40px; }
+header p { opacity:.75; margin:10px auto 0; max-width:780px; line-height:1.55; }
+h2 { font-family:'Fraunces',serif; font-style:italic; color:#EBB732; font-size:28px; margin:36px 24px 6px; }
+h2 small { font-family:'Urbanist',sans-serif; font-style:normal; font-size:14px; opacity:.7; margin-left:10px; }
+.bar { margin:10px 24px 4px; display:flex; gap:8px; flex-wrap:wrap; }
+.f { background:none; border:1px solid rgba(235,183,50,.5); color:#EBB732; border-radius:16px; padding:5px 14px; cursor:pointer; font-family:inherit; }
+.f:hover, .f.on { background:rgba(235,183,50,.15); }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; padding:18px 24px 40px; }
+.card { background:#0E4A48; border-radius:14px; overflow:hidden; border:1px solid rgba(235,183,50,.18); display:flex; flex-direction:column; }
+.card img, .card video { width:100%; display:block; aspect-ratio:4/5; object-fit:cover; background:#082D2C; }
+.ph { aspect-ratio:4/5; display:flex; flex-direction:column; justify-content:center; gap:12px; padding:28px; background:repeating-linear-gradient(135deg,#0B3A39 0 14px,#0D4241 14px 28px); }
+.ph span { align-self:flex-start; font-size:12px; font-weight:700; letter-spacing:.06em; padding:4px 10px; border-radius:10px; background:rgba(244,240,224,.1); color:#F4F0E0; }
+.ph b { font-size:24px; line-height:1.35; color:#F4F0E0; }
+.ph i { font-style:normal; font-size:13.5px; opacity:.7; line-height:1.5; }
+.strip { display:flex; gap:4px; padding:6px 6px 0; overflow-x:auto; }
+.strip img { width:46px; height:58px; aspect-ratio:auto; border-radius:5px; flex:none; opacity:.85; }
+.strip img:hover { opacity:1; }
+.meta { display:flex; align-items:center; gap:8px; padding:12px 14px 4px; }
+.chip { font-size:12px; padding:3px 10px; border-radius:12px; letter-spacing:.04em; font-weight:700; }
+.chip.SIS { background:rgba(235,183,50,.18); color:#EBB732; }
+.chip.F24 { background:rgba(120,214,205,.16); color:#8FE0D6; }
+.id { opacity:.7; font-size:12.5px; flex:1; }
+.copy { background:#EBB732; color:#0B3A39; border:none; border-radius:10px; padding:7px 12px; font-weight:700; cursor:pointer; font-family:inherit; font-size:12px; }
+.copy:active { transform:scale(.96); }
+.post { background:none; border:1px solid rgba(235,183,50,.5); color:#EBB732; border-radius:10px; padding:6px 10px; cursor:pointer; font-family:inherit; font-size:12px; }
+.card.done { border-color:#39B37E; }
+.card.done .post { background:#39B37E; border-color:#39B37E; color:#0B3A39; font-weight:700; }
+.card.todo .post { display:none; }
+.whenrow { padding:8px 14px 0; display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+.when { display:inline-block; background:rgba(235,183,50,.1); color:#EBB732; font-size:12.5px; padding:4px 10px; border-radius:10px; }
+.st { display:inline-block; font-size:12px; font-weight:700; padding:4px 10px; border-radius:10px; letter-spacing:.04em; background:rgba(245,190,80,.18); color:#F5BE50; border:1px solid rgba(245,190,80,.5); }
+.st.green { background:rgba(57,179,126,.18); color:#4ED99A; border-color:rgba(57,179,126,.6); }
+.st.red { background:rgba(240,90,100,.16); color:#F58A93; border-color:rgba(240,90,100,.55); }
+.st.gray { background:rgba(244,240,224,.08); color:rgba(244,240,224,.75); border-color:rgba(244,240,224,.25); }
+.cap { white-space:pre-wrap; font-family:'Noto Sans Bengali','Urbanist',sans-serif; font-size:13.5px; line-height:1.6; opacity:.88; padding:10px 14px 16px; }
+.cap.dim { opacity:.5; font-family:inherit; }
+.counts { display:flex; gap:10px; justify-content:center; margin-top:14px; flex-wrap:wrap; }
+.counts span { font-size:13px; padding:5px 12px; border-radius:12px; }
+.counts .cg { background:rgba(57,179,126,.18); color:#4ED99A; }
+.counts .cy { background:rgba(245,190,80,.18); color:#F5BE50; }
+.counts .cr { background:rgba(240,90,100,.16); color:#F58A93; }
+.counts .cn { background:rgba(244,240,224,.08); color:rgba(244,240,224,.8); }
+.tblwrap { overflow-x:auto; margin:12px 24px 8px; }
+table { border-collapse:collapse; width:100%; font-size:13.5px; }
+th, td { text-align:left; padding:7px 12px; border-bottom:1px solid rgba(235,183,50,.14); white-space:nowrap; vertical-align:top; }
+th { color:#EBB732; font-weight:600; }
+td a { color:#F4F0E0; text-decoration:none; }
+td a:hover { color:#EBB732; }
+td small { opacity:.6; }
+.dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-left:4px; background:#F5BE50; }
+.dot.g { background:#4ED99A; } .dot.r { background:#F58A93; }
+footer { text-align:center; opacity:.55; padding:30px; font-size:13px; }
+@media (max-width:640px){ header h1{font-size:30px} .grid{padding:14px 16px 32px} .tblwrap,.bar{margin-left:16px;margin-right:16px} h2{margin-left:16px} }
+</style></head><body>
+<header><h1>Suma · Flight24 · Content Studio</h1>
+<p>Suma International Services Ltd. + Flight24.co · Facebook &amp; Instagram · 1 Nov - 31 Dec 2026 · 122 posts, all 4:5.
+39 made and ready for review. Times are Bangladesh time. Mark each card "Posted?" when it goes live; cards past their time and not
+marked turn red. Swipe posts: upload the slides in order (tap a thumbnail to open it full size).</p>
+<div class="counts"><span class="cg" id="c-green">0 posted</span><span class="cy" id="c-yellow">0 scheduled</span>
+<span class="cr" id="c-red">0 due</span><span class="cn" id="c-todo">0 still to make</span></div></header>
+<h2>Schedule</h2>
+<div class="tblwrap"><table><tr><th>Date</th><th>Suma International Services Ltd.</th><th>Flight24.co</th></tr>
+<tr id="row-2026-11-01"><td>Sun 01 Nov<br><small>St Martin's opens</small></td><td><a href="#1101-SIS" onclick="jump('1101-SIS')">সেন্ট মার্টিন খুলছে আজ থেকে</a> · 1:30 PM <span class="dot g"></span></td><td><a href="#1101-F24" onclick="jump('1101-F24')">কোথায় যাবেন? এক কলেই টিকেট</a> · 4:00 PM <span class="dot g"></span></td></tr>
+<tr id="row-2026-11-02"><td>Mon 02 Nov</td><td><a href="#1102-SIS" onclick="jump('1102-SIS')">রমজানের উমরাহ: সিট এখনই নিশ্চিত করুন</a> · 8:30 PM <span class="dot g"></span></td><td><a href="#1102-F24" onclick="jump('1102-F24')">সেন্ট মার্টিন খুলে গেছে!</a> · 11:00 AM <span class="dot g"></span></td></tr>
+<tr id="row-2026-11-03"><td>Tue 03 Nov</td><td><a href="#1103-SIS" onclick="jump('1103-SIS')">ভারতের ট্যুরিস্ট ভিসা আবার চালু</a> · 8:30 PM <span class="dot g"></span></td><td><a href="#1103-F24" onclick="jump('1103-F24')">ভিসা খুলেছে, এবার ভারতের টিকেট</a> · 11:00 AM <span class="dot g"></span></td></tr>
+<tr id="row-2026-11-04"><td>Wed 04 Nov</td><td><a href="#1104-SIS" onclick="jump('1104-SIS')">আপনার কাছের শাখায় আসুন</a> · 1:30 PM <span class="dot g"></span></td><td><a href="#1104-F24" onclick="jump('1104-F24')">টিকেট কাটুন ঘরে বসেই</a> · 11:00 AM <span class="dot g"></span></td></tr>
+<tr id="row-2026-11-05"><td>Thu 05 Nov</td><td><a href="#1105-SIS" onclick="jump('1105-SIS')">উইকেন্ডে কক্সবাজার বা সিলেট</a> · 8:30 PM <span class="dot g"></span></td><td><a href="#1105-F24" onclick="jump('1105-F24')">ঢাকা থেকে এক ঘণ্টায় সমুদ্রের পাড়ে</a> · 11:00 AM <span class="dot g"></span></td></tr>
+<tr id="row-2026-11-06"><td>Fri 06 Nov</td><td><a href="#1106-SIS" onclick="jump('1106-SIS')">উমরাহ ভিসার নতুন নিয়ম</a> · 2:45 PM <span class="dot g"></span></td><td><a href="#1106-F24" onclick="jump('1106-F24')">রমজানে উমরাহ? টিকেট আগে কাটুন</a> · 9:00 PM <span class="dot g"></span></td></tr>
+<tr id="row-2026-11-07"><td>Sat 07 Nov</td><td><a href="#1107-SIS" onclick="jump('1107-SIS')">দুই দিনের কক্সবাজার</a> · 1:30 PM <span class="dot g"></span></td><td><a href="#1107-F24" onclick="jump('1107-F24')">উমরাহ ভিসার নতুন নিয়মে চিন্তা?</a> · 11:00 AM <span class="dot g"></span></td></tr>
+<tr id="row-2026-11-08"><td>Sun 08 Nov</td><td><a href="#1108-SIS" onclick="jump('1108-SIS')">নেপাল: এক ঘণ্টার একটু বেশি</a> · 8:30 PM <span class="dot g"></span></td><td><a href="#1108-F24" onclick="jump('1108-F24')">সব এয়ারলাইনের ভাড়া এক সার্চে</a> · 11:00 AM <span class="dot g"></span></td></tr>
+<tr id="row-2026-11-09"><td>Mon 09 Nov</td><td><a href="#1109-SIS" onclick="jump('1109-SIS')">হাজীদের মুখে আমাদের সেবা</a> · 1:30 PM <span class="dot y"></span></td><td><a href="#1109-F24" onclick="jump('1109-F24')">কাঠমান্ডুর টিকেট</a> · 11:00 AM <span class="dot g"></span></td></tr>
+<tr id="row-2026-11-10"><td>Tue 10 Nov</td><td><a href="#1110-SIS" onclick="jump('1110-SIS')">উমরাহর খরচ: টাকা কোথায় যায়</a> · 8:30 PM <span class="dot g"></span></td><td><a href="#1110-F24" onclick="jump('1110-F24')">মোবাইলেই টিকেট কাটুন</a> · 4:00 PM <span class="dot g"></span></td></tr>
+<tr id="row-2026-11-11"><td>Wed 11 Nov</td><td><a href="#1111-SIS" onclick="jump('1111-SIS')">কোন উমরাহ প্যাকেজ আপনার জন্য?</a> · 8:30 PM <span class="dot g"></span></td><td><a href="#1111-F24" onclick="jump('1111-F24')">সুমা ইন্টারন্যাশনালের সহযোগী প্রতিষ্ঠান</a> · 11:00 AM <span class="dot g"></span></td></tr>
+<tr id="row-2026-11-12"><td>Thu 12 Nov</td><td><a href="#1112-SIS" onclick="jump('1112-SIS')">হজ ২০২৭: আপনার পরবর্তী ধাপ</a> · 8:30 PM <span class="dot g"></span></td><td><a href="#1112-F24" onclick="jump('1112-F24')">থাইল্যান্ড-মালয়েশিয়া: টিকেট ও ভিসা</a> · 11:00 AM <span class="dot g"></span></td></tr>
+<tr id="row-2026-11-13"><td>Fri 13 Nov</td><td><a href="#1113-SIS" onclick="jump('1113-SIS')">মদিনায় একটি ভোর</a> · 2:45 PM <span class="dot g"></span></td><td><a href="#1113-F24" onclick="jump('1113-F24')">জেদ্দা না মদিনা: উমরাহয় কোথায় নামবেন</a> · 9:00 PM <span class="dot g"></span></td></tr>
+<tr id="row-2026-11-14"><td>Sat 14 Nov</td><td><a href="#1114-SIS" onclick="jump('1114-SIS')">ডায়াবেটিস নিয়ে উমরাহ</a> · 11:00 AM <span class="dot g"></span></td><td><a href="#1114-F24" onclick="jump('1114-F24')">এক মিনিটে ই-টিকেট</a> · 4:00 PM <span class="dot y"></span></td></tr>
+<tr id="row-2026-11-15"><td>Sun 15 Nov</td><td><a href="#1115-SIS" onclick="jump('1115-SIS')">প্রথম উমরাহ: ৫টি সাধারণ প্রশ্ন</a> · 8:30 PM <span class="dot g"></span></td><td><a href="#1115-F24" onclick="jump('1115-F24')">ডিসেম্বর-জানুয়ারির উমরাহ টিকেট</a> · 11:00 AM <span class="dot g"></span></td></tr>
+<tr id="row-2026-11-16"><td>Mon 16 Nov</td><td><a href="#1116-SIS" onclick="jump('1116-SIS')">রমজান উমরাহ প্যাকেজ ২০২৭</a> · 8:30 PM <span class="dot g"></span></td><td><a href="#1116-F24" onclick="jump('1116-F24')">যাত্রীর মুখে ফ্লাইট২৪</a> · 4:00 PM <span class="dot y"></span></td></tr>
+<tr id="row-2026-11-17"><td>Tue 17 Nov</td><td><a href="#1117-SIS" onclick="jump('1117-SIS')">দার্জিলিং-এ শীতের ভোর</a> · 1:30 PM <span class="dot g"></span></td><td><a href="#1117-F24" onclick="jump('1117-F24')">কলকাতার টিকেট, ভিসা সহায়তাসহ</a> · 11:00 AM <span class="dot g"></span></td></tr>
+<tr id="row-2026-11-18"><td>Wed 18 Nov</td><td><a href="#1118-SIS" onclick="jump('1118-SIS')">আপনার উমরাহ ফাইল, ধাপে ধাপে</a> · 8:30 PM <span class="dot g"></span></td><td><a href="#1118-F24" onclick="jump('1118-F24')">মানুষের সাথে কথা বলুন: হটলাইন ১৬৭০৩</a> · 11:00 AM <span class="dot g"></span></td></tr>
+<tr id="row-2026-11-19"><td>Thu 19 Nov<br><small>Exams start</small></td><td><a href="#1119-SIS" onclick="jump('1119-SIS')">ছুটির আগেই প্ল্যান করুন</a> · 8:30 PM <span class="dot g"></span></td><td><a href="#1119-F24" onclick="jump('1119-F24')">স্কুল ছুটির ভাড়া এখনই দেখুন</a> · 11:00 AM <span class="dot g"></span></td></tr>
+<tr id="row-2026-11-20"><td>Fri 20 Nov</td><td><a href="#1120-SIS" onclick="jump('1120-SIS')">বাচ্চাদের নিয়ে উমরাহ</a> · 2:45 PM <span class="dot g"></span></td><td><a href="#1120-F24" onclick="jump('1120-F24')">রজব-শাবানের উমরাহ টিকেট</a> · 9:00 PM <span class="dot g"></span></td></tr>
+<tr id="row-2026-11-21"><td>Sat 21 Nov</td><td><a href="#1121-SIS" onclick="jump('1121-SIS')">শীতের ৩টি ছুটি: নেপাল, ভুটান, থাইল্যান্ড</a> · 11:00 AM <span class="dot g"></span></td><td><a href="#1121-F24" onclick="jump('1121-F24')">টিকেটের শর্ত, সহজ কথায়</a> · 11:00 AM <span class="dot g"></span></td></tr>
+<tr id="row-2026-11-22"><td>Sun 22 Nov</td><td><a href="#1122-SIS" onclick="jump('1122-SIS')">লাইভে প্রশ্ন করুন</a> · 8:30 PM <span class="dot y"></span></td><td><a href="#1122-F24" onclick="jump('1122-F24')">যেভাবে খুশি পেমেন্ট করুন</a> · 11:00 AM <span class="dot r"></span></td></tr>
+<tr id="row-2026-11-23"><td>Mon 23 Nov</td><td><a href="#1123-SIS" onclick="jump('1123-SIS')">মক্কার যিয়ারত: যা যা দেখাব</a> · 8:30 PM <span class="dot y"></span></td><td><a href="#1123-F24" onclick="jump('1123-F24')">৩০ সেকেন্ডে ফ্লাইট২৪.কো</a> · 4:00 PM <span class="dot r"></span></td></tr>
+<tr id="row-2026-11-24"><td>Tue 24 Nov</td><td><a href="#1124-SIS" onclick="jump('1124-SIS')">১৬ ডিসেম্বরে ৪ দিনের ছুটি</a> · 8:30 PM <span class="dot y"></span></td><td><a href="#1124-F24" onclick="jump('1124-F24')">১৬-১৯ ডিসেম্বরের ভাড়া</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-11-25"><td>Wed 25 Nov</td><td><a href="#1125-SIS" onclick="jump('1125-SIS')">শীতে উমরাহ, আরামে উমরাহ</a> · 1:30 PM <span class="dot y"></span></td><td><a href="#1125-F24" onclick="jump('1125-F24')">লাইভ: কম ভাড়ায় টিকেট খোঁজার উপায়</a> · 8:30 PM <span class="dot y"></span></td></tr>
+<tr id="row-2026-11-26"><td>Thu 26 Nov</td><td><a href="#1126-SIS" onclick="jump('1126-SIS')">উমরাহ ধাপে ধাপে: ইহরাম</a> · 8:30 PM <span class="dot y"></span></td><td><a href="#1126-F24" onclick="jump('1126-F24')">চিকিৎসার জন্য বিদেশ: টিকেট ও ভিসা</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-11-27"><td>Fri 27 Nov</td><td><a href="#1127-SIS" onclick="jump('1127-SIS')">রজব-শাবানে উমরাহ: তারিখ ঘোষণা</a> · 2:45 PM <span class="dot r"></span></td><td><a href="#1127-F24" onclick="jump('1127-F24')">জেদ্দা-মদিনার সরাসরি ফ্লাইট</a> · 9:00 PM <span class="dot y"></span></td></tr>
+<tr id="row-2026-11-28"><td>Sat 28 Nov</td><td><a href="#1128-SIS" onclick="jump('1128-SIS')">থাইল্যান্ড ৫ দিন</a> · 11:00 AM <span class="dot y"></span></td><td><a href="#1128-F24" onclick="jump('1128-F24')">ফ্লাইটের আগে পাসপোর্ট চেক</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-11-29"><td>Sun 29 Nov</td><td><a href="#1129-SIS" onclick="jump('1129-SIS')">প্যাকেজে কী কী থাকছে</a> · 8:30 PM <span class="dot y"></span></td><td><a href="#1129-F24" onclick="jump('1129-F24')">বুকিং খুঁজুন, বদলান</a> · 4:00 PM <span class="dot y"></span></td></tr>
+<tr id="row-2026-11-30"><td>Mon 30 Nov</td><td><a href="#1130-SIS" onclick="jump('1130-SIS')">রমজানের সিট সীমিত</a> · 8:30 PM <span class="dot r"></span></td><td><a href="#1130-F24" onclick="jump('1130-F24')">নভেম্বরে পাশে থাকার জন্য ধন্যবাদ</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-01"><td>Tue 01 Dec<br><small>Victory month</small></td><td><a href="#1201-SIS" onclick="jump('1201-SIS')">বিজয়ের মাস শুরু</a> · 8:30 PM <span class="dot y"></span></td><td><a href="#1201-F24" onclick="jump('1201-F24')">বিজয়ের মাস</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-02"><td>Wed 02 Dec</td><td><a href="#1202-SIS" onclick="jump('1202-SIS')">রজব আসছে, রমজান কাছে</a> · 1:30 PM <span class="dot y"></span></td><td><a href="#1202-F24" onclick="jump('1202-F24')">ছুটিতে বাড়ি ফেরার টিকেট</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-03"><td>Thu 03 Dec</td><td><a href="#1203-SIS" onclick="jump('1203-SIS')">সেন্ট মার্টিনে রাত কাটানো যাবে</a> · 8:30 PM <span class="dot y"></span></td><td><a href="#1203-F24" onclick="jump('1203-F24')">সেন্ট মার্টিন যেতে কক্সবাজারের টিকেট</a> · 11:00 AM <span class="dot r"></span></td></tr>
+<tr id="row-2026-12-04"><td>Fri 04 Dec</td><td><a href="#1204-SIS" onclick="jump('1204-SIS')">উমরাহ ধাপে ধাপে: তাওয়াফ</a> · 2:45 PM <span class="dot y"></span></td><td><a href="#1204-F24" onclick="jump('1204-F24')">কুয়াশায় ফ্লাইট দেরি হলে</a> · 9:00 PM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-05"><td>Sat 05 Dec</td><td><a href="#1205-SIS" onclick="jump('1205-SIS')">বয়স্ক বাবা-মায়ের উমরাহ</a> · 11:00 AM <span class="dot y"></span></td><td><a href="#1205-F24" onclick="jump('1205-F24')">রমজান উমরাহ টিকেট: সিট আপডেট</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-06"><td>Sun 06 Dec<br><small>Exams end</small></td><td><a href="#1206-SIS" onclick="jump('1206-SIS')">পরীক্ষা শেষ, এবার ঘুরতে যাই</a> · 1:30 PM <span class="dot y"></span></td><td><a href="#1206-F24" onclick="jump('1206-F24')">ছুটির ভাড়া খুলে গেছে</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-07"><td>Mon 07 Dec</td><td><a href="#1207-SIS" onclick="jump('1207-SIS')">স্কুল ছুটিতে পরিবার নিয়ে উমরাহ</a> · 8:30 PM <span class="dot y"></span></td><td><a href="#1207-F24" onclick="jump('1207-F24')">আগে কাটুন, কম দিন</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-08"><td>Tue 08 Dec</td><td><a href="#1208-SIS" onclick="jump('1208-SIS')">বাবা-মাকে উমরাহয় পাঠান নিশ্চিন্তে</a> · 1:30 PM <span class="dot y"></span></td><td><a href="#1208-F24" onclick="jump('1208-F24')">আরেক যাত্রীর গল্প</a> · 4:00 PM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-09"><td>Wed 09 Dec</td><td><a href="#1209-SIS" onclick="jump('1209-SIS')">হজ ২০২৮ আগ্রহী তালিকা</a> · 8:30 PM <span class="dot y"></span></td><td><a href="#1209-F24" onclick="jump('1209-F24')">টিকেট, উমরাহ, ভিসা, ছুটি: এক জায়গায়</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-10"><td>Thu 10 Dec<br><small>Rajab begins</small></td><td><a href="#1210-SIS" onclick="jump('1210-SIS')">রজব মাস শুরু</a> · 8:30 PM <span class="dot y"></span></td><td><a href="#1210-F24" onclick="jump('1210-F24')">রজব শুরু: উমরাহর টিকেট</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-11"><td>Fri 11 Dec</td><td><a href="#1211-SIS" onclick="jump('1211-SIS')">রজব-শাবানে উমরাহ</a> · 2:45 PM <span class="dot r"></span></td><td><a href="#1211-F24" onclick="jump('1211-F24')">লম্বা ছুটির শেষ সিট</a> · 9:00 PM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-12"><td>Sat 12 Dec</td><td><a href="#1212-SIS" onclick="jump('1212-SIS')">কাশ্মীরে তুষার</a> · 11:00 AM <span class="dot y"></span></td><td><a href="#1212-F24" onclick="jump('1212-F24')">ই-টিকেট পড়বেন যেভাবে</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-13"><td>Sun 13 Dec</td><td><a href="#1213-SIS" onclick="jump('1213-SIS')">১৬ ডিসেম্বরের শেষ সিট</a> · 8:30 PM <span class="dot r"></span></td><td><a href="#1213-F24" onclick="jump('1213-F24')">উমরাহ যাত্রীর লাগেজ নিয়ম</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-14"><td>Mon 14 Dec<br><small>Intellectuals Day</small></td><td><a href="#1214-SIS" onclick="jump('1214-SIS')">শহীদ বুদ্ধিজীবী দিবস</a> · 10:00 AM <span class="dot y"></span></td><td><a href="#1214-F24" onclick="jump('1214-F24')">শহীদ বুদ্ধিজীবী দিবস</a> · 10:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-15"><td>Tue 15 Dec</td><td><a href="#1215-SIS" onclick="jump('1215-SIS')">শ্রীমঙ্গলে শীতের সকাল</a> · 1:30 PM <span class="dot y"></span></td><td><a href="#1215-F24" onclick="jump('1215-F24')">পুরো পরিবারের টিকেট এক বুকিংয়ে</a> · 4:00 PM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-16"><td>Wed 16 Dec<br><small>Victory Day</small></td><td><a href="#1216-SIS" onclick="jump('1216-SIS')">মহান বিজয় দিবস</a> · 10:00 AM <span class="dot y"></span></td><td><a href="#1216-F24" onclick="jump('1216-F24')">মহান বিজয় দিবস</a> · 10:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-17"><td>Thu 17 Dec<br><small>4-day holiday</small></td><td><a href="#1217-SIS" onclick="jump('1217-SIS')">রমজান উমরাহ: শেষ সিট</a> · 8:30 PM <span class="dot r"></span></td><td><a href="#1217-F24" onclick="jump('1217-F24')">রমজানের শেষ দশকের টিকেট</a> · 11:00 AM <span class="dot r"></span></td></tr>
+<tr id="row-2026-12-18"><td>Fri 18 Dec</td><td><a href="#1218-SIS" onclick="jump('1218-SIS')">উমরাহ ধাপে ধাপে: সাঈ</a> · 2:45 PM <span class="dot y"></span></td><td><a href="#1218-F24" onclick="jump('1218-F24')">বরফ দেখতে: শ্রীনগর ও বাগডোগরা</a> · 9:00 PM <span class="dot r"></span></td></tr>
+<tr id="row-2026-12-19"><td>Sat 19 Dec</td><td><a href="#1219-SIS" onclick="jump('1219-SIS')">হজ যাত্রীর চেকলিস্ট: জানুয়ারি-মার্চ</a> · 11:00 AM <span class="dot y"></span></td><td><a href="#1219-F24" onclick="jump('1219-F24')">মার্চে ঈদের ছুটি: ভিসা ও টিকেট এখনই</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-20"><td>Sun 20 Dec<br><small>School holidays</small></td><td><a href="#1220-SIS" onclick="jump('1220-SIS')">ছুটি শুরু, প্যাকেজ রেডি</a> · 8:30 PM <span class="dot y"></span></td><td><a href="#1220-F24" onclick="jump('1220-F24')">ছুটির সপ্তাহ শুরু</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-21"><td>Mon 21 Dec</td><td><a href="#1221-SIS" onclick="jump('1221-SIS')">একটি গ্রুপ রওনা দেওয়ার আগে</a> · 1:30 PM <span class="dot y"></span></td><td><a href="#1221-F24" onclick="jump('1221-F24')">বিদেশে কাজে ফেরার আগে</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-22"><td>Tue 22 Dec</td><td><a href="#1222-SIS" onclick="jump('1222-SIS')">জানুয়ারির উমরাহ গ্রুপ</a> · 8:30 PM <span class="dot r"></span></td><td><a href="#1222-F24" onclick="jump('1222-F24')">প্রবাসীদের ওয়ান-ওয়ে টিকেট</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-23"><td>Wed 23 Dec</td><td><a href="#1223-SIS" onclick="jump('1223-SIS')">শেষ দশকে উমরাহ</a> · 8:30 PM <span class="dot y"></span></td><td><a href="#1223-F24" onclick="jump('1223-F24')">টিকেটের সাথে ভিসা সহায়তা</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-24"><td>Thu 24 Dec</td><td><a href="#1224-SIS" onclick="jump('1224-SIS')">নতুন বছর পাহাড়ে বা সাগরে</a> · 8:30 PM <span class="dot y"></span></td><td><a href="#1224-F24" onclick="jump('1224-F24')">নতুন বছরে কক্সবাজার, সিলেট</a> · 11:00 AM <span class="dot r"></span></td></tr>
+<tr id="row-2026-12-25"><td>Fri 25 Dec</td><td><a href="#1225-SIS" onclick="jump('1225-SIS')">উমরাহ ধাপে ধাপে: মদিনা যিয়ারত</a> · 2:45 PM <span class="dot y"></span></td><td><a href="#1225-F24" onclick="jump('1225-F24')">জানুয়ারির উমরাহ টিকেট</a> · 9:00 PM <span class="dot r"></span></td></tr>
+<tr id="row-2026-12-26"><td>Sat 26 Dec</td><td><a href="#1226-SIS" onclick="jump('1226-SIS')">ডিসেম্বরের উমরাহ যাত্রীরা</a> · 1:30 PM <span class="dot y"></span></td><td><a href="#1226-F24" onclick="jump('1226-F24')">কেন ফ্লাইট২৪.কো</a> · 4:00 PM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-27"><td>Sun 27 Dec</td><td><a href="#1227-SIS" onclick="jump('1227-SIS')">ফেব্রুয়ারির ভারত ভ্রমণ</a> · 8:30 PM <span class="dot y"></span></td><td><a href="#1227-F24" onclick="jump('1227-F24')">২০২৭-এর ছুটির ক্যালেন্ডার</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-28"><td>Mon 28 Dec</td><td><a href="#1228-SIS" onclick="jump('1228-SIS')">২০২৭ উমরাহ ক্যালেন্ডার</a> · 8:30 PM <span class="dot y"></span></td><td><a href="#1228-F24" onclick="jump('1228-F24')">জানুয়ারির জেদ্দা ভাড়া</a> · 11:00 AM <span class="dot r"></span></td></tr>
+<tr id="row-2026-12-29"><td>Tue 29 Dec</td><td><a href="#1229-SIS" onclick="jump('1229-SIS')">২০২৭-এর ছুটির প্ল্যান</a> · 8:30 PM <span class="dot y"></span></td><td><a href="#1229-F24" onclick="jump('1229-F24')">২০২৭ শুরু হোক ফ্লাইট২৪.কো দিয়ে</a> · 11:00 AM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-30"><td>Wed 30 Dec<br><small>School results</small></td><td><a href="#1230-SIS" onclick="jump('1230-SIS')">ফলাফলের দিনে অভিনন্দন</a> · 8:30 PM <span class="dot y"></span></td><td><a href="#1230-F24" onclick="jump('1230-F24')">২০২৬, ফ্লাইট২৪.কো-তে</a> · 4:00 PM <span class="dot y"></span></td></tr>
+<tr id="row-2026-12-31"><td>Thu 31 Dec<br><small>New Year's Eve</small></td><td><a href="#1231-SIS" onclick="jump('1231-SIS')">শুভ নববর্ষ ২০২৭</a> · 8:30 PM <span class="dot y"></span></td><td><a href="#1231-F24" onclick="jump('1231-F24')">শুভ নববর্ষ ২০২৭</a> · 11:00 AM <span class="dot y"></span></td></tr></table></div>
+<div class="bar" style="margin-top:28px"><button class="f on" onclick="flt('ALL',this)">ALL</button><button class="f" onclick="flt('SIS',this)">SUMA</button><button class="f" onclick="flt('F24',this)">FLIGHT24</button><button class="f" onclick="flt('MADE',this)">READY</button><button class="f" onclick="flt('TODO',this)">TO MAKE</button></div>
+<h2 id="w1">Week 1<small>Sun 01 Nov - Sat 07 Nov · 14/14 made</small></h2>
+<div class="grid"><div class="card" data-pid="1101-SIS" data-brand="SIS" data-made="1"><video preload="none" controls playsinline src="../media/2026-11-01_Suma_StMartin_Video_4x5.mp4"></video>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-01T13:30:00+06:00" data-made="1">Scheduled</span> <span class="when">Sun 01 Nov · 1:30 PM BD</span><span class="when">Boost ৳1,000</span><span class="when">St Martin's opens</span></div>
+<pre class="cap">সেন্ট মার্টিন খুলে গেছে! 🏝️
+
+নভেম্বরে দিনে গিয়ে দিনে ফেরা, ডিসেম্বর থেকে রাতে থাকা যাবে।
+জাহাজ থেকে হোটেল, পুরো ট্রিপ এক প্যাকেজে।
+
+সেন্ট মার্টিনের সিট সবার আগে নিন।
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#SaintMartin #CoxsBazar</pre></div>
+<div class="card" data-pid="1101-F24" data-brand="F24" data-made="1"><video preload="none" controls playsinline src="../media/2026-11-01_Flight24_Tickets_Video_4x5.mp4"></video>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-01T16:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Sun 01 Nov · 4:00 PM BD</span><span class="when">Boost ৳1,500</span><span class="when">St Martin's opens</span></div>
+<pre class="cap">কোথায় যাবেন? ✈️
+
+কক্সবাজার, কলকাতা, জেদ্দা, সেন্ট মার্টিন: সব এয়ারলাইনের সেরা ভাড়া, এক জায়গায়।
+আপনার পরের টিকিট, এক কলেই।
+
+Hotline 16703 · flight24.co
+
+#Flight24 #AirTicket</pre></div>
+<div class="card" data-pid="1102-F24" data-brand="F24" data-made="1"><a href="../media/2026-11-02_Flight24_Swipe_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-02_Flight24_Swipe_01.jpg" alt="1102-F24"></a><div class="strip"><a href="../media/2026-11-02_Flight24_Swipe_01.jpg" target="_blank" title="Slide 1"><img loading="lazy" src="../media/2026-11-02_Flight24_Swipe_01.jpg" alt=""></a><a href="../media/2026-11-02_Flight24_Swipe_02.jpg" target="_blank" title="Slide 2"><img loading="lazy" src="../media/2026-11-02_Flight24_Swipe_02.jpg" alt=""></a><a href="../media/2026-11-02_Flight24_Swipe_03.jpg" target="_blank" title="Slide 3"><img loading="lazy" src="../media/2026-11-02_Flight24_Swipe_03.jpg" alt=""></a><a href="../media/2026-11-02_Flight24_Swipe_04.jpg" target="_blank" title="Slide 4"><img loading="lazy" src="../media/2026-11-02_Flight24_Swipe_04.jpg" alt=""></a></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">SWIPE · 4 slides</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-02T11:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Mon 02 Nov · 11:00 AM BD</span></div>
+<pre class="cap">সেন্ট মার্টিন খুলে গেছে! 🏝️
+
+নীল জলে একটা দিন: নভেম্বরে দিনে গিয়ে দিনে ফেরা।
+দিনে মাত্র ৩,৫০০ জন, ট্রাভেল পাস লাগবে, তাই সিট ফুরায় দ্রুত।
+
+কক্সবাজার + সেন্ট মার্টিন প্যাকেজ, সিট থাকতে বুক করুন।
+Hotline 16703 · flight24.co
+
+#Flight24 #SaintMartin</pre></div>
+<div class="card" data-pid="1102-SIS" data-brand="SIS" data-made="1"><a href="../media/2026-11-02_Suma_Swipe_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-02_Suma_Swipe_01.jpg" alt="1102-SIS"></a><div class="strip"><a href="../media/2026-11-02_Suma_Swipe_01.jpg" target="_blank" title="Slide 1"><img loading="lazy" src="../media/2026-11-02_Suma_Swipe_01.jpg" alt=""></a><a href="../media/2026-11-02_Suma_Swipe_02.jpg" target="_blank" title="Slide 2"><img loading="lazy" src="../media/2026-11-02_Suma_Swipe_02.jpg" alt=""></a><a href="../media/2026-11-02_Suma_Swipe_03.jpg" target="_blank" title="Slide 3"><img loading="lazy" src="../media/2026-11-02_Suma_Swipe_03.jpg" alt=""></a><a href="../media/2026-11-02_Suma_Swipe_04.jpg" target="_blank" title="Slide 4"><img loading="lazy" src="../media/2026-11-02_Suma_Swipe_04.jpg" alt=""></a><a href="../media/2026-11-02_Suma_Swipe_05.jpg" target="_blank" title="Slide 5"><img loading="lazy" src="../media/2026-11-02_Suma_Swipe_05.jpg" alt=""></a></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE · 5 slides</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-02T20:30:00+06:00" data-made="1">Scheduled</span> <span class="when">Mon 02 Nov · 8:30 PM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap">এই রমজানে কাবার সামনে ইফতার। 🕋
+
+হারাম থেকে কয়েক মিনিটের হাঁটা দূরত্বে হোটেল।
+শেষ দশকের রাতগুলো হারামের পাশে।
+রমজান শুরু হতে পারে ৯ ফেব্রুয়ারির দিকে (চাঁদ দেখার ওপর নির্ভর করবে), আর এই সিটগুলোই সবার আগে শেষ হয়।
+
+সিট শেষ হওয়ার আগেই আপনারটা নিন। প্যাকেজের দাম ও তারিখ জানতে কল করুন।
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#রমজান_উমরাহ #Umrah2027</pre></div>
+<div class="card" data-pid="1103-F24" data-brand="F24" data-made="1"><a href="../media/2026-11-03_Flight24_Photo_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-03_Flight24_Photo_01.jpg" alt="1103-F24"></a>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-03T11:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Tue 03 Nov · 11:00 AM BD</span></div>
+<pre class="cap">ভিসা হাতে? এবার টিকিট। ✈️
+
+কলকাতা, দিল্লি, চেন্নাই: ঢাকা থেকে প্রতিদিন ফ্লাইট।
+আজকের ভাড়া জানতে একটা কল দিন।
+
+Hotline 16703 · flight24.co
+
+#Flight24 #IndiaVisa</pre></div>
+<div class="card" data-pid="1103-SIS" data-brand="SIS" data-made="1"><a href="../media/2026-11-03_Suma_Photo_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-03_Suma_Photo_01.jpg" alt="1103-SIS"></a>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-03T20:30:00+06:00" data-made="1">Scheduled</span> <span class="when">Tue 03 Nov · 8:30 PM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap">কলকাতা ডাকছে, ভিসা খুলেছে! 🇮🇳
+
+ট্যুরিস্ট ভিসা ফি নেই, শুধু IVAC প্রসেসিং ফি ৳১,৫০০।
+কাগজ আমাদের দেখিয়ে জমা দিন: একবারেই ঠিক, অ্যাপয়েন্টমেন্ট নষ্ট নয়।
+
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#IndiaVisa</pre></div>
+<div class="card" data-pid="1104-F24" data-brand="F24" data-made="1"><a href="../media/2026-11-04_Flight24_Swipe_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-04_Flight24_Swipe_01.jpg" alt="1104-F24"></a><div class="strip"><a href="../media/2026-11-04_Flight24_Swipe_01.jpg" target="_blank" title="Slide 1"><img loading="lazy" src="../media/2026-11-04_Flight24_Swipe_01.jpg" alt=""></a><a href="../media/2026-11-04_Flight24_Swipe_02.jpg" target="_blank" title="Slide 2"><img loading="lazy" src="../media/2026-11-04_Flight24_Swipe_02.jpg" alt=""></a><a href="../media/2026-11-04_Flight24_Swipe_03.jpg" target="_blank" title="Slide 3"><img loading="lazy" src="../media/2026-11-04_Flight24_Swipe_03.jpg" alt=""></a></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">SWIPE · 3 slides</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-04T11:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Wed 04 Nov · 11:00 AM BD</span></div>
+<pre class="cap">টিকিটের জন্য এজেন্সিতে যেতে হবে না।
+
+কল বা WhatsApp করুন, কোথায় আর কবে যাবেন বলুন, তারপর বিকাশ, নগদ বা কার্ডে পেমেন্ট।
+দেশ-বিদেশের যেকোনো ফ্লাইট, ঘরে বসেই।
+
+আপনার পরের ফ্লাইট, এক কল দূরে।
+Hotline 16703 · flight24.co
+
+#Flight24 #AirTicket</pre></div>
+<div class="card" data-pid="1104-SIS" data-brand="SIS" data-made="1"><video preload="none" controls playsinline src="../media/2026-11-04_Suma_Branches_Video_4x5.mp4"></video>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-04T13:30:00+06:00" data-made="1">Scheduled</span> <span class="when">Wed 04 Nov · 1:30 PM BD</span></div>
+<pre class="cap">ফোনে নয়, মুখোমুখি কথা বলুন। ☕
+
+ঢাকা, সিলেট, মৌলভীবাজার আর হবিগঞ্জে আমাদের শাখা।
+এক কাপ চা, আর আপনার পুরো ট্রিপের প্ল্যান।
+
+চা রেডি, চলে আসুন।
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#SumaInternational</pre></div>
+<div class="card" data-pid="1105-F24" data-brand="F24" data-made="1"><a href="../media/2026-11-05_Flight24_Photo_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-05_Flight24_Photo_01.jpg" alt="1105-F24"></a>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-05T11:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Thu 05 Nov · 11:00 AM BD</span></div>
+<pre class="cap">নাশতা ঢাকায়, দুপুরে সমুদ্র। 🌊
+
+কক্সবাজারে প্রতিদিন একাধিক ফ্লাইট, যাওয়া-আসা একসাথে।
+শুক্র-শনির সিট আগে ফুরায়, আগেই নিয়ে নিন।
+
+Hotline 16703 · flight24.co
+
+#Flight24 #CoxsBazar</pre></div>
+<div class="card" data-pid="1105-SIS" data-brand="SIS" data-made="1"><a href="../media/2026-11-05_Suma_Photo_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-05_Suma_Photo_01.jpg" alt="1105-SIS"></a>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-05T20:30:00+06:00" data-made="1">Scheduled</span> <span class="when">Thu 05 Nov · 8:30 PM BD</span></div>
+<pre class="cap">এই উইকেন্ডে সমুদ্র না চা-বাগান? 🌊🍃
+
+কক্সবাজার অথবা সিলেট: ফ্লাইট আর হোটেল, এক প্যাকেজে।
+কোন তারিখে যাবেন, শুধু বলুন।
+
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#CoxsBazar #Sylhet</pre></div>
+<div class="card" data-pid="1106-SIS" data-brand="SIS" data-made="1"><a href="../media/2026-11-06_Suma_Swipe_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-06_Suma_Swipe_01.jpg" alt="1106-SIS"></a><div class="strip"><a href="../media/2026-11-06_Suma_Swipe_01.jpg" target="_blank" title="Slide 1"><img loading="lazy" src="../media/2026-11-06_Suma_Swipe_01.jpg" alt=""></a><a href="../media/2026-11-06_Suma_Swipe_02.jpg" target="_blank" title="Slide 2"><img loading="lazy" src="../media/2026-11-06_Suma_Swipe_02.jpg" alt=""></a><a href="../media/2026-11-06_Suma_Swipe_03.jpg" target="_blank" title="Slide 3"><img loading="lazy" src="../media/2026-11-06_Suma_Swipe_03.jpg" alt=""></a><a href="../media/2026-11-06_Suma_Swipe_04.jpg" target="_blank" title="Slide 4"><img loading="lazy" src="../media/2026-11-06_Suma_Swipe_04.jpg" alt=""></a></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE · 4 slides</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-06T14:45:00+06:00" data-made="1">Scheduled</span> <span class="when">Fri 06 Nov · 2:45 PM BD</span></div>
+<pre class="cap">উমরাহ ভিসায় নতুন নিয়ম। না জানলে আটকে যেতে পারে যাত্রা।
+
+নুসুকে হোটেল কনফার্ম না হলে ভিসা নেই।
+হোটেলও হতে হবে সৌদি পর্যটন মন্ত্রণালয় অনুমোদিত।
+
+নিয়ম মেনে উমরাহ, ঝামেলা ছাড়াই: হোটেল থেকে ভিসা, পুরোটা এক জায়গায়।
+জুমা মোবারক।
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#UmrahVisa #Nusuk</pre></div>
+<div class="card" data-pid="1106-F24" data-brand="F24" data-made="1"><a href="../media/2026-11-06_Flight24_Swipe_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-06_Flight24_Swipe_01.jpg" alt="1106-F24"></a><div class="strip"><a href="../media/2026-11-06_Flight24_Swipe_01.jpg" target="_blank" title="Slide 1"><img loading="lazy" src="../media/2026-11-06_Flight24_Swipe_01.jpg" alt=""></a><a href="../media/2026-11-06_Flight24_Swipe_02.jpg" target="_blank" title="Slide 2"><img loading="lazy" src="../media/2026-11-06_Flight24_Swipe_02.jpg" alt=""></a><a href="../media/2026-11-06_Flight24_Swipe_03.jpg" target="_blank" title="Slide 3"><img loading="lazy" src="../media/2026-11-06_Flight24_Swipe_03.jpg" alt=""></a><a href="../media/2026-11-06_Flight24_Swipe_04.jpg" target="_blank" title="Slide 4"><img loading="lazy" src="../media/2026-11-06_Flight24_Swipe_04.jpg" alt=""></a></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">SWIPE · 4 slides</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-06T21:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Fri 06 Nov · 9:00 PM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap">রমজানের উমরাহ, টিকিট আগে। 🕋
+
+রমজানের সিট সবার আগে ফুরায়, প্রতি বছর একই গল্প।
+জেদ্দা আর মদিনা, দুই দিকেই ফ্লাইট।
+
+রমজানের টিকিট নিন আজকের ভাড়ায়।
+Hotline 16703 · flight24.co
+
+#Flight24 #UmrahTicket</pre></div>
+<div class="card" data-pid="1107-F24" data-brand="F24" data-made="1"><a href="../media/2026-11-07_Flight24_Swipe_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-07_Flight24_Swipe_01.jpg" alt="1107-F24"></a><div class="strip"><a href="../media/2026-11-07_Flight24_Swipe_01.jpg" target="_blank" title="Slide 1"><img loading="lazy" src="../media/2026-11-07_Flight24_Swipe_01.jpg" alt=""></a><a href="../media/2026-11-07_Flight24_Swipe_02.jpg" target="_blank" title="Slide 2"><img loading="lazy" src="../media/2026-11-07_Flight24_Swipe_02.jpg" alt=""></a><a href="../media/2026-11-07_Flight24_Swipe_03.jpg" target="_blank" title="Slide 3"><img loading="lazy" src="../media/2026-11-07_Flight24_Swipe_03.jpg" alt=""></a></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">SWIPE · 3 slides</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-07T11:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Sat 07 Nov · 11:00 AM BD</span></div>
+<pre class="cap">নতুন নিয়মে উমরাহ? চিন্তা নেই।
+
+হোটেল ছাড়া ভিসা হয় না, থাকতে হবে লাইসেন্স করা হোটেলে।
+তারিখ আগে ঠিক করলে হারামের কাছে হোটেল পাবেন।
+
+নিয়ম বদলেছে, ভরসা একই। জেদ্দা ও মদিনার ভাড়া জানতে কল করুন।
+Hotline 16703 · flight24.co
+
+#Flight24 #UmrahVisa</pre></div>
+<div class="card" data-pid="1107-SIS" data-brand="SIS" data-made="1"><video preload="none" controls playsinline src="../media/2026-11-07_Suma_CoxsBazar_2Days_Video_4x5.mp4"></video>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-07T13:30:00+06:00" data-made="1">Scheduled</span> <span class="when">Sat 07 Nov · 1:30 PM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap">দুই দিনেই সমুদ্র ছুঁয়ে আসুন। 🌊
+
+সকালের ফ্লাইট, মেরিন ড্রাইভে গাড়ি, সাগরপাড়ের হোটেল।
+ফ্লাইট থেকে হোটেল, এক প্যাকেজে।
+
+এই উইকেন্ডেই সমুদ্র। প্যাকেজের দাম জানতে কল করুন।
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#CoxsBazar</pre></div></div>
+<h2 id="w2">Week 2<small>Sun 08 Nov - Sat 14 Nov · 12/14 made</small></h2>
+<div class="grid"><div class="card" data-pid="1108-F24" data-brand="F24" data-made="1"><a href="../media/2026-11-08_Flight24_Photo_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-08_Flight24_Photo_01.jpg" alt="1108-F24"></a>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-08T11:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Sun 08 Nov · 11:00 AM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap">সব এয়ারলাইনের সেরা ভাড়া, এক কলে। ✈️
+
+পাঁচ জায়গায় ফোন করার দিন শেষ।
+আমরা মিলিয়ে দেখি, আপনি শুধু বেছে নিন।
+
+Hotline 16703 · flight24.co
+
+#Flight24 #AirTicket</pre></div>
+<div class="card" data-pid="1108-SIS" data-brand="SIS" data-made="1"><a href="../media/2026-11-08_Suma_Swipe_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-08_Suma_Swipe_01.jpg" alt="1108-SIS"></a><div class="strip"><a href="../media/2026-11-08_Suma_Swipe_01.jpg" target="_blank" title="Slide 1"><img loading="lazy" src="../media/2026-11-08_Suma_Swipe_01.jpg" alt=""></a><a href="../media/2026-11-08_Suma_Swipe_02.jpg" target="_blank" title="Slide 2"><img loading="lazy" src="../media/2026-11-08_Suma_Swipe_02.jpg" alt=""></a><a href="../media/2026-11-08_Suma_Swipe_03.jpg" target="_blank" title="Slide 3"><img loading="lazy" src="../media/2026-11-08_Suma_Swipe_03.jpg" alt=""></a><a href="../media/2026-11-08_Suma_Swipe_04.jpg" target="_blank" title="Slide 4"><img loading="lazy" src="../media/2026-11-08_Suma_Swipe_04.jpg" alt=""></a><a href="../media/2026-11-08_Suma_Swipe_05.jpg" target="_blank" title="Slide 5"><img loading="lazy" src="../media/2026-11-08_Suma_Swipe_05.jpg" alt=""></a></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE · 5 slides</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-08T20:30:00+06:00" data-made="1">Scheduled</span> <span class="when">Sun 08 Nov · 8:30 PM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap">এই শীতে নেপাল। 🏔️
+
+ঢাকা থেকে মাত্র এক ঘণ্টার উড়াল।
+নেমেই ভিসা, প্রথমবার ৩০ দিন পর্যন্ত ফ্রি।
+সকালে কাঠমান্ডু, বিকেলে পোখরার লেক।
+
+নেপাল প্যাকেজ রেডি। দাম জানতে কল করুন।
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#Nepal #Pokhara</pre></div>
+<div class="card" data-pid="1109-F24" data-brand="F24" data-made="1"><a href="../media/2026-11-09_Flight24_Swipe_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-09_Flight24_Swipe_01.jpg" alt="1109-F24"></a><div class="strip"><a href="../media/2026-11-09_Flight24_Swipe_01.jpg" target="_blank" title="Slide 1"><img loading="lazy" src="../media/2026-11-09_Flight24_Swipe_01.jpg" alt=""></a><a href="../media/2026-11-09_Flight24_Swipe_02.jpg" target="_blank" title="Slide 2"><img loading="lazy" src="../media/2026-11-09_Flight24_Swipe_02.jpg" alt=""></a><a href="../media/2026-11-09_Flight24_Swipe_03.jpg" target="_blank" title="Slide 3"><img loading="lazy" src="../media/2026-11-09_Flight24_Swipe_03.jpg" alt=""></a><a href="../media/2026-11-09_Flight24_Swipe_04.jpg" target="_blank" title="Slide 4"><img loading="lazy" src="../media/2026-11-09_Flight24_Swipe_04.jpg" alt=""></a></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">SWIPE · 4 slides</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-09T11:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Mon 09 Nov · 11:00 AM BD</span></div>
+<pre class="cap">চা শেষ হতেই কাঠমান্ডু। ☕✈️
+
+ঢাকা থেকে সরাসরি ফ্লাইট, জানালার সিটে হিমালয়।
+ভিসা? নেপালে নেমেই পাবেন।
+
+শীতের ছুটির সিট ফুরানোর আগেই নিয়ে নিন।
+Hotline 16703 · flight24.co
+
+#Flight24 #Kathmandu</pre></div>
+<div class="card todo" data-pid="1109-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>হাজীদের মুখে আমাদের সেবা</b><i>Hear it from them.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-09T13:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Mon 09 Nov · 1:30 PM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card" data-pid="1110-F24" data-brand="F24" data-made="1"><video preload="none" controls playsinline src="../media/2026-11-10_Flight24_Mobile_Video_4x5.mp4"></video>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-10T16:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Tue 10 Nov · 4:00 PM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap">টিকিটের জন্য আর লাইনে নয়। 📱
+
+শহর আর তারিখ দিন, সব ফ্লাইট এক স্ক্রিনে।
+আজই খুলুন flight24.co, নয়তো এক কল করুন।
+
+Hotline 16703 · flight24.co
+
+#Flight24 #AirTicket</pre></div>
+<div class="card" data-pid="1110-SIS" data-brand="SIS" data-made="1"><a href="../media/2026-11-10_Suma_Swipe_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-10_Suma_Swipe_01.jpg" alt="1110-SIS"></a><div class="strip"><a href="../media/2026-11-10_Suma_Swipe_01.jpg" target="_blank" title="Slide 1"><img loading="lazy" src="../media/2026-11-10_Suma_Swipe_01.jpg" alt=""></a><a href="../media/2026-11-10_Suma_Swipe_02.jpg" target="_blank" title="Slide 2"><img loading="lazy" src="../media/2026-11-10_Suma_Swipe_02.jpg" alt=""></a><a href="../media/2026-11-10_Suma_Swipe_03.jpg" target="_blank" title="Slide 3"><img loading="lazy" src="../media/2026-11-10_Suma_Swipe_03.jpg" alt=""></a><a href="../media/2026-11-10_Suma_Swipe_04.jpg" target="_blank" title="Slide 4"><img loading="lazy" src="../media/2026-11-10_Suma_Swipe_04.jpg" alt=""></a></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE · 4 slides</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-10T20:30:00+06:00" data-made="1">Scheduled</span> <span class="when">Tue 10 Nov · 8:30 PM BD</span></div>
+<pre class="cap">উমরাহর প্রতিটি টাকা, পরিষ্কার হিসাবে।
+
+ভিসা, টিকিট, হোটেল, যাতায়াত, জিয়ারাহ: কোথায় কত যায়, বুক করার আগেই জানুন।
+হারামের যত কাছে, দাম তত বেশি। আপনার বাজেটে সেরা হোটেলটা আমরা খুঁজে দিই।
+
+পুরো খরচের হিসাব জানতে কল করুন।
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#Umrah #UmrahCost</pre></div>
+<div class="card" data-pid="1111-F24" data-brand="F24" data-made="1"><a href="../media/2026-11-11_Flight24_Photo_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-11_Flight24_Photo_01.jpg" alt="1111-F24"></a>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-11T11:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Wed 11 Nov · 11:00 AM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap">পুরনো ভরসা, এবার আপনার টিকিটে।
+
+Flight24.co, Suma International Services Ltd.-এর সহযোগী প্রতিষ্ঠান।
+একই অভিজ্ঞ টিম, এখন আপনার প্রতিটি ফ্লাইটে।
+
+Hotline 16703 · flight24.co
+
+#Flight24</pre></div>
+<div class="card" data-pid="1111-SIS" data-brand="SIS" data-made="1"><a href="../media/2026-11-11_Suma_Swipe_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-11_Suma_Swipe_01.jpg" alt="1111-SIS"></a><div class="strip"><a href="../media/2026-11-11_Suma_Swipe_01.jpg" target="_blank" title="Slide 1"><img loading="lazy" src="../media/2026-11-11_Suma_Swipe_01.jpg" alt=""></a><a href="../media/2026-11-11_Suma_Swipe_02.jpg" target="_blank" title="Slide 2"><img loading="lazy" src="../media/2026-11-11_Suma_Swipe_02.jpg" alt=""></a><a href="../media/2026-11-11_Suma_Swipe_03.jpg" target="_blank" title="Slide 3"><img loading="lazy" src="../media/2026-11-11_Suma_Swipe_03.jpg" alt=""></a></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE · 3 slides</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-11T20:30:00+06:00" data-made="1">Scheduled</span> <span class="when">Wed 11 Nov · 8:30 PM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap">রমজানে উমরাহ, আপনার বাজেটে। 🕋
+
+বাজেট, হোটেলের দূরত্ব, সফরের দিন আর সাথে কে যাচ্ছেন: এই চার উত্তরেই আপনার প্যাকেজ।
+রমজানের সিট সীমিত, আগে নিশ্চিত করুন।
+
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#রমজান_উমরাহ #Umrah2027</pre></div>
+<div class="card" data-pid="1112-F24" data-brand="F24" data-made="1"><a href="../media/2026-11-12_Flight24_Swipe_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-12_Flight24_Swipe_01.jpg" alt="1112-F24"></a><div class="strip"><a href="../media/2026-11-12_Flight24_Swipe_01.jpg" target="_blank" title="Slide 1"><img loading="lazy" src="../media/2026-11-12_Flight24_Swipe_01.jpg" alt=""></a><a href="../media/2026-11-12_Flight24_Swipe_02.jpg" target="_blank" title="Slide 2"><img loading="lazy" src="../media/2026-11-12_Flight24_Swipe_02.jpg" alt=""></a><a href="../media/2026-11-12_Flight24_Swipe_03.jpg" target="_blank" title="Slide 3"><img loading="lazy" src="../media/2026-11-12_Flight24_Swipe_03.jpg" alt=""></a><a href="../media/2026-11-12_Flight24_Swipe_04.jpg" target="_blank" title="Slide 4"><img loading="lazy" src="../media/2026-11-12_Flight24_Swipe_04.jpg" alt=""></a></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">SWIPE · 4 slides</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-12T11:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Thu 12 Nov · 11:00 AM BD</span></div>
+<pre class="cap">এই শীতে ব্যাংকক-কুয়ালালামপুর। 🌏
+
+এক ছুটিতে দুই দেশ।
+টিকিট আর ভিসার কাগজ, এক ডেস্কে।
+
+ভাড়া বাড়ার আগেই সিট নিন।
+Hotline 16703 · flight24.co
+
+#Flight24 #Bangkok #KualaLumpur</pre></div>
+<div class="card" data-pid="1112-SIS" data-brand="SIS" data-made="1"><a href="../media/2026-11-12_Suma_Photo_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-12_Suma_Photo_01.jpg" alt="1112-SIS"></a>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-12T20:30:00+06:00" data-made="1">Scheduled</span> <span class="when">Thu 12 Nov · 8:30 PM BD</span></div>
+<pre class="cap">হজ ২০২৭: প্রস্তুতি শুরু এখনই। 🕋
+
+পাসপোর্ট, টিকা, প্রশিক্ষণ: কোন কাজ কবে, এক কলেই জেনে নিন।
+নিবন্ধন নম্বর হাতে রেখে কল করুন।
+
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#Hajj2027</pre></div>
+<div class="card" data-pid="1113-SIS" data-brand="SIS" data-made="1"><video preload="none" controls playsinline src="../media/2026-11-13_Suma_Madinah_Morning_Video_4x5.mp4"></video>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-13T14:45:00+06:00" data-made="1">Scheduled</span> <span class="when">Fri 13 Nov · 2:45 PM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap">মদিনায় একটি ভোর। 🤍
+
+ফজরের আজান, মসজিদে নববীতে নামাজ, তারপর ঠান্ডা বাতাসে হোটেলে ফেরা।
+এমন একটি ভোর আপনার অপেক্ষায়।
+
+উমরাহর প্ল্যান করতে কল করুন।
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#Madinah #Umrah #জুমা_মোবারক</pre></div>
+<div class="card" data-pid="1113-F24" data-brand="F24" data-made="1"><a href="../media/2026-11-13_Flight24_Swipe_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-13_Flight24_Swipe_01.jpg" alt="1113-F24"></a><div class="strip"><a href="../media/2026-11-13_Flight24_Swipe_01.jpg" target="_blank" title="Slide 1"><img loading="lazy" src="../media/2026-11-13_Flight24_Swipe_01.jpg" alt=""></a><a href="../media/2026-11-13_Flight24_Swipe_02.jpg" target="_blank" title="Slide 2"><img loading="lazy" src="../media/2026-11-13_Flight24_Swipe_02.jpg" alt=""></a><a href="../media/2026-11-13_Flight24_Swipe_03.jpg" target="_blank" title="Slide 3"><img loading="lazy" src="../media/2026-11-13_Flight24_Swipe_03.jpg" alt=""></a><a href="../media/2026-11-13_Flight24_Swipe_04.jpg" target="_blank" title="Slide 4"><img loading="lazy" src="../media/2026-11-13_Flight24_Swipe_04.jpg" alt=""></a></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">SWIPE · 4 slides</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-13T21:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Fri 13 Nov · 9:00 PM BD</span></div>
+<pre class="cap">উমরাহয় নামবেন জেদ্দা না মদিনা?
+
+আগে মক্কা? জেদ্দায় নামুন, দেড় ঘণ্টায় হারামে।
+আগে মদিনা? শুরুটা হোক মসজিদে নববীতে।
+
+রমজানের আগেই টিকিট নিশ্চিত করুন।
+Hotline 16703 · flight24.co
+
+#Flight24 #Umrah</pre></div>
+<div class="card" data-pid="1114-SIS" data-brand="SIS" data-made="1"><a href="../media/2026-11-14_Suma_Swipe_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-14_Suma_Swipe_01.jpg" alt="1114-SIS"></a><div class="strip"><a href="../media/2026-11-14_Suma_Swipe_01.jpg" target="_blank" title="Slide 1"><img loading="lazy" src="../media/2026-11-14_Suma_Swipe_01.jpg" alt=""></a><a href="../media/2026-11-14_Suma_Swipe_02.jpg" target="_blank" title="Slide 2"><img loading="lazy" src="../media/2026-11-14_Suma_Swipe_02.jpg" alt=""></a><a href="../media/2026-11-14_Suma_Swipe_03.jpg" target="_blank" title="Slide 3"><img loading="lazy" src="../media/2026-11-14_Suma_Swipe_03.jpg" alt=""></a><a href="../media/2026-11-14_Suma_Swipe_04.jpg" target="_blank" title="Slide 4"><img loading="lazy" src="../media/2026-11-14_Suma_Swipe_04.jpg" alt=""></a></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE · 4 slides</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-14T11:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Sat 14 Nov · 11:00 AM BD</span></div>
+<pre class="cap">ডায়াবেটিস আছে? উমরাহ তবুও সম্ভব। 🤍
+
+বাবা-মায়ের জন্য ৬টি সহজ পরামর্শ, ছবিগুলোতে।
+সবার আগে: ডাক্তারের পরামর্শ।
+
+বাবা-মায়ের উমরাহ, আমাদের যত্নে। হারামের কাছে হোটেলসহ প্যাকেজ জানতে কল করুন।
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#Umrah #DiabetesCare</pre></div>
+<div class="card todo" data-pid="1114-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>এক মিনিটে ই-টিকেট</b><i>Pay, and your e-ticket arrives in about a minute.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-14T16:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Sat 14 Nov · 4:00 PM BD</span></div>
+<pre class="cap dim"></pre></div></div>
+<h2 id="w3">Week 3<small>Sun 15 Nov - Sat 21 Nov · 13/14 made</small></h2>
+<div class="grid"><div class="card" data-pid="1115-F24" data-brand="F24" data-made="1"><a href="../media/2026-11-15_Flight24_Photo_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-15_Flight24_Photo_01.jpg" alt="1115-F24"></a>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-15T11:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Sun 15 Nov · 11:00 AM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap">শীতের উমরাহ, টিকিট এখনই। ✈️
+
+ডিসেম্বর আর জানুয়ারির জেদ্দা ও মদিনা ফ্লাইট।
+পরিবার বা দল নিয়ে গেলে গ্রুপ ভাড়াও আছে।
+
+আজকের ভাড়া জানতে কল করুন।
+Hotline 16703 · flight24.co
+
+#Flight24 #UmrahTicket</pre></div>
+<div class="card" data-pid="1115-SIS" data-brand="SIS" data-made="1"><a href="../media/2026-11-15_Suma_Swipe_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-15_Suma_Swipe_01.jpg" alt="1115-SIS"></a><div class="strip"><a href="../media/2026-11-15_Suma_Swipe_01.jpg" target="_blank" title="Slide 1"><img loading="lazy" src="../media/2026-11-15_Suma_Swipe_01.jpg" alt=""></a><a href="../media/2026-11-15_Suma_Swipe_02.jpg" target="_blank" title="Slide 2"><img loading="lazy" src="../media/2026-11-15_Suma_Swipe_02.jpg" alt=""></a><a href="../media/2026-11-15_Suma_Swipe_03.jpg" target="_blank" title="Slide 3"><img loading="lazy" src="../media/2026-11-15_Suma_Swipe_03.jpg" alt=""></a><a href="../media/2026-11-15_Suma_Swipe_04.jpg" target="_blank" title="Slide 4"><img loading="lazy" src="../media/2026-11-15_Suma_Swipe_04.jpg" alt=""></a><a href="../media/2026-11-15_Suma_Swipe_05.jpg" target="_blank" title="Slide 5"><img loading="lazy" src="../media/2026-11-15_Suma_Swipe_05.jpg" alt=""></a><a href="../media/2026-11-15_Suma_Swipe_06.jpg" target="_blank" title="Slide 6"><img loading="lazy" src="../media/2026-11-15_Suma_Swipe_06.jpg" alt=""></a><a href="../media/2026-11-15_Suma_Swipe_07.jpg" target="_blank" title="Slide 7"><img loading="lazy" src="../media/2026-11-15_Suma_Swipe_07.jpg" alt=""></a></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE · 7 slides</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-15T20:30:00+06:00" data-made="1">Scheduled</span> <span class="when">Sun 15 Nov · 8:30 PM BD</span></div>
+<pre class="cap">প্রথম উমরাহ? ৫টি প্রশ্নের উত্তর এক জায়গায়। 🕋
+
+কত সময় লাগে, ইহরাম কোথায় পরবেন, বাবা-মা পারবেন কি না, কী কাগজ লাগবে, কখন বুক করবেন।
+সহজ কথায়, ছবিগুলোতে।
+
+আরও প্রশ্ন? আপনার প্রথম উমরাহ, আমাদের সাথে।
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#Umrah #FirstUmrah</pre></div>
+<div class="card todo" data-pid="1116-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>যাত্রীর মুখে ফ্লাইট২৪</b><i>A traveller who booked on Flight24.co, in their own words.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-16T16:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Mon 16 Nov · 4:00 PM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card" data-pid="1116-SIS" data-brand="SIS" data-made="1"><a href="../media/2026-11-16_Suma_Swipe_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-16_Suma_Swipe_01.jpg" alt="1116-SIS"></a><div class="strip"><a href="../media/2026-11-16_Suma_Swipe_01.jpg" target="_blank" title="Slide 1"><img loading="lazy" src="../media/2026-11-16_Suma_Swipe_01.jpg" alt=""></a><a href="../media/2026-11-16_Suma_Swipe_02.jpg" target="_blank" title="Slide 2"><img loading="lazy" src="../media/2026-11-16_Suma_Swipe_02.jpg" alt=""></a><a href="../media/2026-11-16_Suma_Swipe_03.jpg" target="_blank" title="Slide 3"><img loading="lazy" src="../media/2026-11-16_Suma_Swipe_03.jpg" alt=""></a><a href="../media/2026-11-16_Suma_Swipe_04.jpg" target="_blank" title="Slide 4"><img loading="lazy" src="../media/2026-11-16_Suma_Swipe_04.jpg" alt=""></a></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE · 4 slides</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-16T20:30:00+06:00" data-made="1">Scheduled</span> <span class="when">Mon 16 Nov · 8:30 PM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap">রমজান উমরাহ ২০২৭, বুকিং চলছে। 🕋
+
+ভিসা, যাওয়া-আসার টিকিট, মক্কা ও মদিনায় হোটেল, যাতায়াত আর জিয়ারাহ: সব এক প্যাকেজে।
+মক্কার পর মদিনার শান্তি, এক সফরে।
+
+সিট সীমিত, আগে এলে আগে। প্যাকেজের দাম জানতে কল করুন।
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#রমজান_উমরাহ #Umrah2027</pre></div>
+<div class="card" data-pid="1117-F24" data-brand="F24" data-made="1"><a href="../media/2026-11-17_Flight24_Swipe_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-17_Flight24_Swipe_01.jpg" alt="1117-F24"></a><div class="strip"><a href="../media/2026-11-17_Flight24_Swipe_01.jpg" target="_blank" title="Slide 1"><img loading="lazy" src="../media/2026-11-17_Flight24_Swipe_01.jpg" alt=""></a><a href="../media/2026-11-17_Flight24_Swipe_02.jpg" target="_blank" title="Slide 2"><img loading="lazy" src="../media/2026-11-17_Flight24_Swipe_02.jpg" alt=""></a><a href="../media/2026-11-17_Flight24_Swipe_03.jpg" target="_blank" title="Slide 3"><img loading="lazy" src="../media/2026-11-17_Flight24_Swipe_03.jpg" alt=""></a><a href="../media/2026-11-17_Flight24_Swipe_04.jpg" target="_blank" title="Slide 4"><img loading="lazy" src="../media/2026-11-17_Flight24_Swipe_04.jpg" alt=""></a></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">SWIPE · 4 slides</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-17T11:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Tue 17 Nov · 11:00 AM BD</span></div>
+<pre class="cap">কলকাতা হয়ে দার্জিলিং। 🚂
+
+ভোরের আলোয় কাঞ্চনজঙ্ঘা, শীতের মৌসুম শুরু।
+টিকিট আর ভারতের ভিসার কাগজ, এক জায়গায়।
+
+কলকাতার টিকিট নিন আজকের ভাড়ায়।
+Hotline 16703 · flight24.co
+
+#Flight24 #Kolkata #Darjeeling</pre></div>
+<div class="card" data-pid="1117-SIS" data-brand="SIS" data-made="1"><video preload="none" controls playsinline src="../media/2026-11-17_Suma_Darjeeling_Video_4x5.mp4"></video>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-17T13:30:00+06:00" data-made="1">Scheduled</span> <span class="when">Tue 17 Nov · 1:30 PM BD</span></div>
+<pre class="cap">দার্জিলিং-এ শীতের ভোর। 🏔️
+
+জানালা খুললেই কাঞ্চনজঙ্ঘা, টয় ট্রেনে পাহাড়ি পথ, হাতে গরম চা।
+ভারতের ভিসা খুলেছে: কলকাতা + দার্জিলিং, ৬ দিনের ছুটি।
+
+প্যাকেজের দাম জানতে কল করুন।
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#Darjeeling #Kolkata</pre></div>
+<div class="card" data-pid="1118-F24" data-brand="F24" data-made="1"><a href="../media/2026-11-18_Flight24_Photo_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-18_Flight24_Photo_01.jpg" alt="1118-F24"></a>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-18T11:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Wed 18 Nov · 11:00 AM BD</span></div>
+<pre class="cap">চ্যাটবট নয়, মানুষ কথা বলবে। 📞
+
+হটলাইনে কল দিলেই আমাদের টিম, বুকিংয়ের শেষ পর্যন্ত পাশে।
+
+Hotline 16703 · flight24.co
+
+#Flight24</pre></div>
+<div class="card" data-pid="1118-SIS" data-brand="SIS" data-made="1"><a href="../media/2026-11-18_Suma_Swipe_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-18_Suma_Swipe_01.jpg" alt="1118-SIS"></a><div class="strip"><a href="../media/2026-11-18_Suma_Swipe_01.jpg" target="_blank" title="Slide 1"><img loading="lazy" src="../media/2026-11-18_Suma_Swipe_01.jpg" alt=""></a><a href="../media/2026-11-18_Suma_Swipe_02.jpg" target="_blank" title="Slide 2"><img loading="lazy" src="../media/2026-11-18_Suma_Swipe_02.jpg" alt=""></a><a href="../media/2026-11-18_Suma_Swipe_03.jpg" target="_blank" title="Slide 3"><img loading="lazy" src="../media/2026-11-18_Suma_Swipe_03.jpg" alt=""></a></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE · 3 slides</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-18T20:30:00+06:00" data-made="1">Scheduled</span> <span class="when">Wed 18 Nov · 8:30 PM BD</span></div>
+<pre class="cap">পাসপোর্ট থেকে ভিসা, পুরো উমরাহ ফাইল আমাদের।
+
+পাসপোর্ট আর ছবি, টিকার সনদ, নুসুকে হোটেল বুকিং, তারপর ভিসা আপনার হাতে।
+আপনি শুধু প্রস্তুতি নিন।
+
+কাগজ নিয়ে চলে আসুন। কত দিনে ভিসা, জানতে কল করুন।
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#UmrahVisa</pre></div>
+<div class="card" data-pid="1119-F24" data-brand="F24" data-made="1"><a href="../media/2026-11-19_Flight24_Photo_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-19_Flight24_Photo_01.jpg" alt="1119-F24"></a>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-19T11:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Thu 19 Nov · 11:00 AM BD</span><span class="when">Exams start</span></div>
+<pre class="cap">স্কুল ছুটির টিকিট, ভাড়া বাড়ার আগে। ✈️
+
+ছুটি ২০ থেকে ২৯ ডিসেম্বর। তারিখ যত কাছে, ভাড়া তত বেশি।
+পরিবারের সবার টিকিট এখনই নিয়ে রাখুন।
+
+Hotline 16703 · flight24.co
+
+#Flight24 #WinterHoliday</pre></div>
+<div class="card" data-pid="1119-SIS" data-brand="SIS" data-made="1"><a href="../media/2026-11-19_Suma_Photo_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-19_Suma_Photo_01.jpg" alt="1119-SIS"></a>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-19T20:30:00+06:00" data-made="1">Scheduled</span> <span class="when">Thu 19 Nov · 8:30 PM BD</span><span class="when">Boost ৳1,000</span><span class="when">Exams start</span></div>
+<pre class="cap">পরীক্ষা শেষ, এবার ছুটি। 🌊
+
+স্কুল ছুটি ২০ থেকে ২৯ ডিসেম্বর।
+ভালো হোটেল থাকতে থাকতেই পরিবারের ট্রিপ প্ল্যান করুন।
+
+সমুদ্র, পাহাড় না বিদেশ? কল করুন।
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#FamilyTrip #WinterHoliday</pre></div>
+<div class="card" data-pid="1120-SIS" data-brand="SIS" data-made="1"><video preload="none" controls playsinline src="../media/2026-11-20_Suma_Umrah_Children_Video_4x5.mp4"></video>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-20T14:45:00+06:00" data-made="1">Scheduled</span> <span class="when">Fri 20 Nov · 2:45 PM BD</span></div>
+<pre class="cap">বাচ্চাদের নিয়ে উমরাহ? 🤍
+
+এক বছর বা তার বেশি বয়সী সবার মেনিনজাইটিস টিকা লাগবে।
+টিকা দিন যাত্রার অন্তত ১০ দিন আগে।
+
+পরিবারের উমরাহ, আমাদের যত্নে। কল করুন।
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#Umrah #FamilyUmrah #জুমা_মোবারক</pre></div>
+<div class="card" data-pid="1120-F24" data-brand="F24" data-made="1"><a href="../media/2026-11-20_Flight24_Photo_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-20_Flight24_Photo_01.jpg" alt="1120-F24"></a>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-20T21:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Fri 20 Nov · 9:00 PM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap">রজব-শাবানে উমরাহ, টিকিট আগে। 🕋
+
+জেদ্দা আর মদিনার ফ্লাইট।
+রমজানের ভিড়ের আগেই, শান্তিতে উমরাহ।
+
+তারিখ আর ভাড়া জানতে কল করুন।
+Hotline 16703 · flight24.co
+
+#Flight24 #Umrah</pre></div>
+<div class="card" data-pid="1121-SIS" data-brand="SIS" data-made="1"><a href="../media/2026-11-21_Suma_Swipe_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-21_Suma_Swipe_01.jpg" alt="1121-SIS"></a><div class="strip"><a href="../media/2026-11-21_Suma_Swipe_01.jpg" target="_blank" title="Slide 1"><img loading="lazy" src="../media/2026-11-21_Suma_Swipe_01.jpg" alt=""></a><a href="../media/2026-11-21_Suma_Swipe_02.jpg" target="_blank" title="Slide 2"><img loading="lazy" src="../media/2026-11-21_Suma_Swipe_02.jpg" alt=""></a><a href="../media/2026-11-21_Suma_Swipe_03.jpg" target="_blank" title="Slide 3"><img loading="lazy" src="../media/2026-11-21_Suma_Swipe_03.jpg" alt=""></a><a href="../media/2026-11-21_Suma_Swipe_04.jpg" target="_blank" title="Slide 4"><img loading="lazy" src="../media/2026-11-21_Suma_Swipe_04.jpg" alt=""></a><a href="../media/2026-11-21_Suma_Swipe_05.jpg" target="_blank" title="Slide 5"><img loading="lazy" src="../media/2026-11-21_Suma_Swipe_05.jpg" alt=""></a></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE · 5 slides</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-21T11:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Sat 21 Nov · 11:00 AM BD</span></div>
+<pre class="cap">কাছেই ৩টি শীতের ছুটি। 🌏
+
+নেপাল: লেক আর হিমালয়, নেমেই ভিসা।
+ভুটান: মেঘের ওপর মঠ, অন-অ্যারাইভাল ভিসা।
+থাইল্যান্ড: নীল সাগর, সাদা বালি, ই-ভিসার কাগজ আমরা গুছিয়ে দিই।
+
+কোনটায় যাবেন, শুধু বলুন। টিকিট, হোটেল আর ভিসা, এক প্যাকেজে।
+Hotline 16703 · WhatsApp 01709930142
+www.sumabd.com
+
+#Nepal #Bhutan #Thailand</pre></div>
+<div class="card" data-pid="1121-F24" data-brand="F24" data-made="1"><a href="../media/2026-11-21_Flight24_Swipe_01.jpg" target="_blank"><img loading="lazy" src="../media/2026-11-21_Flight24_Swipe_01.jpg" alt="1121-F24"></a><div class="strip"><a href="../media/2026-11-21_Flight24_Swipe_01.jpg" target="_blank" title="Slide 1"><img loading="lazy" src="../media/2026-11-21_Flight24_Swipe_01.jpg" alt=""></a><a href="../media/2026-11-21_Flight24_Swipe_02.jpg" target="_blank" title="Slide 2"><img loading="lazy" src="../media/2026-11-21_Flight24_Swipe_02.jpg" alt=""></a><a href="../media/2026-11-21_Flight24_Swipe_03.jpg" target="_blank" title="Slide 3"><img loading="lazy" src="../media/2026-11-21_Flight24_Swipe_03.jpg" alt=""></a></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">SWIPE · 3 slides</span>
+<button class="post" onclick="tg(this)">Posted?</button><button class="copy" onclick="cp(this)">Copy caption</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-21T11:00:00+06:00" data-made="1">Scheduled</span> <span class="when">Sat 21 Nov · 11:00 AM BD</span></div>
+<pre class="cap">টিকিট কাটার আগে ৩টি কথা জানুন।
+
+তারিখ বদলাতে ফি কত, রিফান্ড হবে কি না, ব্যাগেজ কত কেজি।
+পেমেন্টের আগেই আমরা সব শর্ত বুঝিয়ে বলি, যেন পরে ঝামেলা না হয়।
+
+Hotline 16703 · flight24.co
+
+#Flight24 #TravelTips</pre></div></div>
+<h2 id="w4">Week 4<small>Sun 22 Nov - Sat 28 Nov · 0/14 made</small></h2>
+<div class="grid"><div class="card todo" data-pid="1122-F24" data-brand="F24" data-made="0"><div class="ph"><span>Needs input</span><b>যেভাবে খুশি পেমেন্ট করুন</b><i>Pay the way you like. [Confirm payment methods]</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-22T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Sun 22 Nov · 11:00 AM BD</span></div>
+<pre class="cap dim">[Confirm payment methods]</pre></div>
+<div class="card todo" data-pid="1122-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>লাইভে প্রশ্ন করুন</b><i>Live at 8:30 PM: ask anything about Ramadan Umrah.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">FACEBOOK LIVE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-22T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Sun 22 Nov · 8:30 PM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1123-F24" data-brand="F24" data-made="0"><div class="ph"><span>Needs input</span><b>৩০ সেকেন্ডে ফ্লাইট২৪.কো</b><i>What Flight24.co is and how to book, in 30 seconds.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-23T16:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Mon 23 Nov · 4:00 PM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1123-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>মক্কার যিয়ারত: যা যা দেখাব</b><i>The places in and around Makkah our package takes you to.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-23T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Mon 23 Nov · 8:30 PM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1124-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>১৬-১৯ ডিসেম্বরের ভাড়া</b><i>Victory Day plus one day off gives 4 days. Fares to Cox's Bazar, Sylhet, Kathmandu, Kolkata.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-24T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Tue 24 Nov · 11:00 AM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1124-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>১৬ ডিসেম্বরে ৪ দিনের ছুটি</b><i>Take one day off on 17 December and get 4 days. Book your flight now.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-24T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Tue 24 Nov · 8:30 PM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1125-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>শীতে উমরাহ, আরামে উমরাহ</b><i>December and January are cooler in Makkah. Easier for elderly parents.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-25T13:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Wed 25 Nov · 1:30 PM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1125-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>লাইভ: কম ভাড়ায় টিকেট খোঁজার উপায়</b><i>Live at 8:30 PM: how to find good fares on Flight24.co. Ask anything.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">FACEBOOK LIVE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-25T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Wed 25 Nov · 8:30 PM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1126-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>চিকিৎসার জন্য বিদেশ: টিকেট ও ভিসা</b><i>Going abroad for treatment? Tickets and medical visa help together.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-26T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Thu 26 Nov · 11:00 AM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1126-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>উমরাহ ধাপে ধাপে: ইহরাম</b><i>Umrah step by step, part 1: Ihram.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-26T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Thu 26 Nov · 8:30 PM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1127-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>Needs input</span><b>রজব-শাবানে উমরাহ: তারিখ ঘোষণা</b><i>Our Rajab and Sha'ban Umrah groups are open. [Fill dates]</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-27T14:45:00+06:00" data-made="0">Scheduled</span> <span class="when">Fri 27 Nov · 2:45 PM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap dim">[Fill dates]</pre></div>
+<div class="card todo" data-pid="1127-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>জেদ্দা-মদিনার সরাসরি ফ্লাইট</b><i>Direct flights from Dhaka to Jeddah and Madinah for your Umrah.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-27T21:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Fri 27 Nov · 9:00 PM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1128-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>থাইল্যান্ড ৫ দিন</b><i>Thailand in 5 days: what is included and what is not.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-28T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Sat 28 Nov · 11:00 AM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1128-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>ফ্লাইটের আগে পাসপোর্ট চেক</b><i>Check these 3 things on your passport before any international flight.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-28T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Sat 28 Nov · 11:00 AM BD</span></div>
+<pre class="cap dim"></pre></div></div>
+<h2 id="w5">Week 5<small>Sun 29 Nov - Sat 05 Dec · 0/14 made</small></h2>
+<div class="grid"><div class="card todo" data-pid="1129-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>বুকিং খুঁজুন, বদলান</b><i>Find your booking and ask for a change in a few taps.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-29T16:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Sun 29 Nov · 4:00 PM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1129-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>প্যাকেজে কী কী থাকছে</b><i>Everything included in our Umrah package, in plain words.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-29T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Sun 29 Nov · 8:30 PM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1130-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>নভেম্বরে পাশে থাকার জন্য ধন্যবাদ</b><i>Thank you to every traveller who booked with Flight24.co in November.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-30T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Mon 30 Nov · 11:00 AM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1130-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>Needs input</span><b>রমজানের সিট সীমিত</b><i>Ramadan Umrah seats left: [real numbers only].</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-11-30T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Mon 30 Nov · 8:30 PM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap dim">[real numbers only]</pre></div>
+<div class="card todo" data-pid="1201-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>বিজয়ের মাস</b><i>Welcome to the month of victory.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">GREETING CARD</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-01T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Tue 01 Dec · 11:00 AM BD</span><span class="when">Victory month</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1201-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>বিজয়ের মাস শুরু</b><i>Welcome to the month of victory.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">GREETING CARD</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-01T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Tue 01 Dec · 8:30 PM BD</span><span class="when">Victory month</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1202-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>ছুটিতে বাড়ি ফেরার টিকেট</b><i>Going home for the holidays? Domestic fares at flight24.co.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-02T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Wed 02 Dec · 11:00 AM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1202-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>রজব আসছে, রমজান কাছে</b><i>Rajab starts in about a week. Ramadan is two months away.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-02T13:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Wed 02 Dec · 1:30 PM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1203-F24" data-brand="F24" data-made="0"><div class="ph"><span>Needs input</span><b>সেন্ট মার্টিন যেতে কক্সবাজারের টিকেট</b><i>Overnight stays on St Martin's start in December. Your Cox's Bazar flight comes first.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-03T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Thu 03 Dec · 11:00 AM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1203-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>সেন্ট মার্টিনে রাত কাটানো যাবে</b><i>From December you can stay overnight on St Martin's. 3 days / 2 nights package.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-03T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Thu 03 Dec · 8:30 PM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1204-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>উমরাহ ধাপে ধাপে: তাওয়াফ</b><i>Umrah step by step, part 2: Tawaf.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-04T14:45:00+06:00" data-made="0">Scheduled</span> <span class="when">Fri 04 Dec · 2:45 PM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1204-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>কুয়াশায় ফ্লাইট দেরি হলে</b><i>Winter fog can delay morning flights. Check your flight status and keep time for connections.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-04T21:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Fri 04 Dec · 9:00 PM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1205-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>বয়স্ক বাবা-মায়ের উমরাহ</b><i>Umrah in comfort for elderly parents: wheelchair help, a guide on hand, hotel close to the Haram. [Confirm wheelchair service]</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-05T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Sat 05 Dec · 11:00 AM BD</span></div>
+<pre class="cap dim">[Confirm wheelchair service]</pre></div>
+<div class="card todo" data-pid="1205-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>রমজান উমরাহ টিকেট: সিট আপডেট</b><i>Ramadan Umrah seats to Jeddah and Madinah. [Real numbers only]</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-05T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Sat 05 Dec · 11:00 AM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap dim">[Real numbers only]</pre></div></div>
+<h2 id="w6">Week 6<small>Sun 06 Dec - Sat 12 Dec · 0/14 made</small></h2>
+<div class="grid"><div class="card todo" data-pid="1206-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>ছুটির ভাড়া খুলে গেছে</b><i>Exams end today. Holiday fares are open at flight24.co.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-06T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Sun 06 Dec · 11:00 AM BD</span><span class="when">Exams end</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1206-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>পরীক্ষা শেষ, এবার ঘুরতে যাই</b><i>Exams are over. Where are families going this holiday?</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-06T13:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Sun 06 Dec · 1:30 PM BD</span><span class="when">Boost ৳1,000</span><span class="when">Exams end</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1207-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>আগে কাটুন, কম দিন</b><i>Holiday fares go up close to the date. Book early, pay less.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-07T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Mon 07 Dec · 11:00 AM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1207-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>স্কুল ছুটিতে পরিবার নিয়ে উমরাহ</b><i>Take the whole family for Umrah in the school holidays. [Fill group date]</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-07T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Mon 07 Dec · 8:30 PM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap dim">[Fill group date]</pre></div>
+<div class="card todo" data-pid="1208-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>বাবা-মাকে উমরাহয় পাঠান নিশ্চিন্তে</b><i>Send your parents for Umrah with peace of mind.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-08T13:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Tue 08 Dec · 1:30 PM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1208-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>আরেক যাত্রীর গল্প</b><i>Another traveller on booking with Flight24.co.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-08T16:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Tue 08 Dec · 4:00 PM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1209-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>টিকেট, উমরাহ, ভিসা, ছুটি: এক জায়গায়</b><i>Tickets, Umrah, visa help and holidays, all at flight24.co.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-09T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Wed 09 Dec · 11:00 AM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1209-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>হজ ২০২৮ আগ্রহী তালিকা</b><i>Want to go for Hajj in 2028? Join our list and we will call you when registration opens.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-09T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Wed 09 Dec · 8:30 PM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1210-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>রজব শুরু: উমরাহর টিকেট</b><i>Rajab has begun. Umrah tickets to Jeddah and Madinah are filling.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-10T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Thu 10 Dec · 11:00 AM BD</span><span class="when">Boost ৳1,000</span><span class="when">Rajab begins</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1210-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>রজব মাস শুরু</b><i>Rajab has begun. Ramadan is near.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">GREETING CARD</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-10T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Thu 10 Dec · 8:30 PM BD</span><span class="when">Rajab begins</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1211-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>Needs input</span><b>রজব-শাবানে উমরাহ</b><i>Rajab and Sha'ban Umrah groups. [Fill dates and seats]</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-11T14:45:00+06:00" data-made="0">Scheduled</span> <span class="when">Fri 11 Dec · 2:45 PM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap dim">[Fill dates and seats]</pre></div>
+<div class="card todo" data-pid="1211-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>লম্বা ছুটির শেষ সিট</b><i>Last seats for 16-19 December: Cox's Bazar, Sylhet, Kathmandu, Kolkata.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-11T21:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Fri 11 Dec · 9:00 PM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1212-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>কাশ্মীরে তুষার</b><i>Snow in Kashmir. Indian visas are open again. 6 days package.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-12T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Sat 12 Dec · 11:00 AM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1212-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>ই-টিকেট পড়বেন যেভাবে</b><i>PNR, baggage, terminal: how to read your e-ticket.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-12T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Sat 12 Dec · 11:00 AM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap dim"></pre></div></div>
+<h2 id="w7">Week 7<small>Sun 13 Dec - Sat 19 Dec · 0/14 made</small></h2>
+<div class="grid"><div class="card todo" data-pid="1213-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>উমরাহ যাত্রীর লাগেজ নিয়ম</b><i>Umrah baggage: Zamzam, weight limits and what goes in the cabin.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-13T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Sun 13 Dec · 11:00 AM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1213-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>Needs input</span><b>১৬ ডিসেম্বরের শেষ সিট</b><i>Last few seats for the Victory Day holiday. [Fill seats]</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-13T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Sun 13 Dec · 8:30 PM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap dim">[Fill seats]</pre></div>
+<div class="card todo" data-pid="1214-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>শহীদ বুদ্ধিজীবী দিবস</b><i>We remember.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">GREETING CARD</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-14T10:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Mon 14 Dec · 10:00 AM BD</span><span class="when">Intellectuals Day</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1214-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>শহীদ বুদ্ধিজীবী দিবস</b><i>We remember.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">GREETING CARD</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-14T10:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Mon 14 Dec · 10:00 AM BD</span><span class="when">Intellectuals Day</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1215-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>শ্রীমঙ্গলে শীতের সকাল</b><i>Holiday close to home: Sylhet, Sreemangal, Jaflong. Our Sylhet branch plans it for you.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-15T13:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Tue 15 Dec · 1:30 PM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1215-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>পুরো পরিবারের টিকেট এক বুকিংয়ে</b><i>Book the whole family on one booking.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-15T16:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Tue 15 Dec · 4:00 PM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1216-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>মহান বিজয় দিবস</b><i>Happy Victory Day.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-16T10:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Wed 16 Dec · 10:00 AM BD</span><span class="when">Victory Day</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1216-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>মহান বিজয় দিবস</b><i>Happy Victory Day.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-16T10:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Wed 16 Dec · 10:00 AM BD</span><span class="when">Victory Day</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1217-F24" data-brand="F24" data-made="0"><div class="ph"><span>Needs input</span><b>রমজানের শেষ দশকের টিকেট</b><i>Planning the last 10 nights in Makkah? Book Jeddah tickets now.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-17T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Thu 17 Dec · 11:00 AM BD</span><span class="when">Boost ৳1,000</span><span class="when">4-day holiday</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1217-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>Needs input</span><b>রমজান উমরাহ: শেষ সিট</b><i>Last seats for Ramadan Umrah. [Real numbers only]</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-17T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Thu 17 Dec · 8:30 PM BD</span><span class="when">Boost ৳1,500</span><span class="when">4-day holiday</span></div>
+<pre class="cap dim">[Real numbers only]</pre></div>
+<div class="card todo" data-pid="1218-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>উমরাহ ধাপে ধাপে: সাঈ</b><i>Umrah step by step, part 3: Sa'i and hair cut.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-18T14:45:00+06:00" data-made="0">Scheduled</span> <span class="when">Fri 18 Dec · 2:45 PM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1218-F24" data-brand="F24" data-made="0"><div class="ph"><span>Needs input</span><b>বরফ দেখতে: শ্রীনগর ও বাগডোগরা</b><i>Snow trips: tickets to Srinagar and Bagdogra, with Indian visa help.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-18T21:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Fri 18 Dec · 9:00 PM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1219-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>হজ যাত্রীর চেকলিস্ট: জানুয়ারি-মার্চ</b><i>Hajj 2027 pilgrims: your January to March checklist.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-19T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Sat 19 Dec · 11:00 AM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1219-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>মার্চে ঈদের ছুটি: ভিসা ও টিকেট এখনই</b><i>Travelling for Eid in March? Apply for the visa and book now.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-19T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Sat 19 Dec · 11:00 AM BD</span></div>
+<pre class="cap dim"></pre></div></div>
+<h2 id="w8">Week 8<small>Sun 20 Dec - Sat 26 Dec · 0/14 made</small></h2>
+<div class="grid"><div class="card todo" data-pid="1220-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>ছুটির সপ্তাহ শুরু</b><i>School holidays start today. Live fares and seats at flight24.co.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-20T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Sun 20 Dec · 11:00 AM BD</span><span class="when">School holidays</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1220-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>ছুটি শুরু, প্যাকেজ রেডি</b><i>School holidays start today. Packages with dates still open.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-20T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Sun 20 Dec · 8:30 PM BD</span><span class="when">Boost ৳1,000</span><span class="when">School holidays</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1221-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>বিদেশে কাজে ফেরার আগে</b><i>Going back to work abroad? Check your visa and BMET clearance before you fly.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-21T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Mon 21 Dec · 11:00 AM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1221-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>একটি গ্রুপ রওনা দেওয়ার আগে</b><i>What happens before a group leaves for Umrah.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-21T13:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Mon 21 Dec · 1:30 PM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1222-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>প্রবাসীদের ওয়ান-ওয়ে টিকেট</b><i>One-way fares to Riyadh, Jeddah, Dubai and Kuala Lumpur. [Fill fares]</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-22T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Tue 22 Dec · 11:00 AM BD</span><span class="when">Boost ৳500</span></div>
+<pre class="cap dim">[Fill fares]</pre></div>
+<div class="card todo" data-pid="1222-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>Needs input</span><b>জানুয়ারির উমরাহ গ্রুপ</b><i>January Umrah group: dates, hotel and seats. [Fill dates and seats]</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-22T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Tue 22 Dec · 8:30 PM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap dim">[Fill dates and seats]</pre></div>
+<div class="card todo" data-pid="1223-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>টিকেটের সাথে ভিসা সহায়তা</b><i>India, Thailand, Malaysia: visa help with your ticket.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-23T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Wed 23 Dec · 11:00 AM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1223-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>শেষ দশকে উমরাহ</b><i>Umrah in the last 10 nights of Ramadan. Small groups, hotels near Haram.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-23T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Wed 23 Dec · 8:30 PM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1224-F24" data-brand="F24" data-made="0"><div class="ph"><span>Needs input</span><b>নতুন বছরে কক্সবাজার, সিলেট</b><i>New Year trip? Cox's Bazar and Sylhet fares at flight24.co.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-24T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Thu 24 Dec · 11:00 AM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1224-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>নতুন বছর পাহাড়ে বা সাগরে</b><i>Start 2027 in the hills or by the sea. 2-3 day packages.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-24T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Thu 24 Dec · 8:30 PM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1225-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>উমরাহ ধাপে ধাপে: মদিনা যিয়ারত</b><i>Umrah step by step, part 4: the places to visit in Madinah. A blessed Jumu'ah to all.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-25T14:45:00+06:00" data-made="0">Scheduled</span> <span class="when">Fri 25 Dec · 2:45 PM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1225-F24" data-brand="F24" data-made="0"><div class="ph"><span>Needs input</span><b>জানুয়ারির উমরাহ টিকেট</b><i>January Umrah tickets to Jeddah and Madinah. [Fill dates]</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-25T21:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Fri 25 Dec · 9:00 PM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap dim">[Fill dates]</pre></div>
+<div class="card todo" data-pid="1226-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>ডিসেম্বরের উমরাহ যাত্রীরা</b><i>Our December pilgrims. May Allah accept.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-26T13:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Sat 26 Dec · 1:30 PM BD</span><span class="when">Boost ৳1,000</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1226-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>কেন ফ্লাইট২৪.কো</b><i>Tickets, Umrah, visa and holidays from one place: why travellers choose Flight24.co.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-26T16:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Sat 26 Dec · 4:00 PM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap dim"></pre></div></div>
+<h2 id="w9">Week 9<small>Sun 27 Dec - Thu 31 Dec · 0/10 made</small></h2>
+<div class="grid"><div class="card todo" data-pid="1227-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>২০২৭-এর ছুটির ক্যালেন্ডার</b><i>Every 2027 public holiday, so you can plan trips early.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-27T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Sun 27 Dec · 11:00 AM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1227-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>ফেব্রুয়ারির ভারত ভ্রমণ</b><i>Going to India in February or March? Book your visa appointment early.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-27T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Sun 27 Dec · 8:30 PM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1228-F24" data-brand="F24" data-made="0"><div class="ph"><span>Needs input</span><b>জানুয়ারির জেদ্দা ভাড়া</b><i>January fares to Jeddah. [Fill fares]</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-28T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Mon 28 Dec · 11:00 AM BD</span></div>
+<pre class="cap dim">[Fill fares]</pre></div>
+<div class="card todo" data-pid="1228-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>২০২৭ উমরাহ ক্যালেন্ডার</b><i>Rajab, Sha'ban, Ramadan or after Eid: when to go for Umrah in 2027.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-28T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Mon 28 Dec · 8:30 PM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1229-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>২০২৭ শুরু হোক ফ্লাইট২৪.কো দিয়ে</b><i>Save flight24.co and Hotline 16703 for every trip in 2027.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-29T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Tue 29 Dec · 11:00 AM BD</span><span class="when">Boost ৳1,500</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1229-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>২০২৭-এর ছুটির প্ল্যান</b><i>Plan your 2027 holidays now.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">SWIPE</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-29T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Tue 29 Dec · 8:30 PM BD</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1230-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>২০২৬, ফ্লাইট২৪.কো-তে</b><i>Our 2026 with travellers, in one minute.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">VIDEO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-30T16:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Wed 30 Dec · 4:00 PM BD</span><span class="when">Boost ৳1,500</span><span class="when">School results</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1230-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>ফলাফলের দিনে অভিনন্দন</b><i>Congratulations to every student. A trip could be the best gift.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">PHOTO</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-30T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Wed 30 Dec · 8:30 PM BD</span><span class="when">School results</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1231-F24" data-brand="F24" data-made="0"><div class="ph"><span>To make</span><b>শুভ নববর্ষ ২০২৭</b><i>Thank you for flying with us in 2026. Wishing you a great 2027.</i></div>
+<div class="meta"><span class="chip F24">Flight24.co</span><span class="id">GREETING CARD</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-31T11:00:00+06:00" data-made="0">Scheduled</span> <span class="when">Thu 31 Dec · 11:00 AM BD</span><span class="when">New Year's Eve</span></div>
+<pre class="cap dim"></pre></div>
+<div class="card todo" data-pid="1231-SIS" data-brand="SIS" data-made="0"><div class="ph"><span>To make</span><b>শুভ নববর্ষ ২০২৭</b><i>Thank you for travelling with us in 2026. Wishing you a blessed 2027.</i></div>
+<div class="meta"><span class="chip SIS">Suma</span><span class="id">GREETING CARD</span>
+<button class="post" onclick="tg(this)">Posted?</button></div>
+<div class="whenrow"><span class="st" data-due="2026-12-31T20:30:00+06:00" data-made="0">Scheduled</span> <span class="when">Thu 31 Dec · 8:30 PM BD</span><span class="when">New Year's Eve</span></div>
+<pre class="cap dim"></pre></div></div>
+<footer>sumabd.com · flight24.co · bismillah</footer>
+<script>
+function cp(btn) {
+  const t = btn.closest('.card').querySelector('.cap').innerText;
+  navigator.clipboard.writeText(t).then(() => { btn.textContent = 'Copied ✓'; setTimeout(() => btn.textContent = 'Copy caption', 1400); });
+}
+function flt(t, b) {
+  document.querySelectorAll('.f').forEach(x => x.classList.toggle('on', x === b));
+  document.querySelectorAll('.card').forEach(c => {
+    const ok = t === 'ALL' || c.dataset.brand === t || (t === 'MADE' && c.dataset.made === '1') || (t === 'TODO' && c.dataset.made === '0');
+    c.style.display = ok ? '' : 'none';
+  });
+}
+function store(k, v) { try { v ? localStorage.setItem(k, v) : localStorage.removeItem(k); } catch (e) {} }
+function read(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+function tg(btn) {
+  const card = btn.closest('.card'), on = card.classList.toggle('done');
+  store('sf-' + card.dataset.pid, on ? '1' : '');
+  btn.textContent = on ? 'Posted ✓' : 'Posted?';
+  paint();
+}
+function paint() {
+  let g = 0, y = 0, r = 0, n = 0;
+  const now = new Date();
+  document.querySelectorAll('.card[data-pid]').forEach(c => {
+    const chip = c.querySelector('.st');
+    if (read('sf-' + c.dataset.pid)) { chip.className = 'st green'; chip.textContent = 'Posted'; g++; }
+    else if (chip.dataset.made === '0') { chip.className = 'st gray'; chip.textContent = c.querySelector('.ph span').textContent; n++; }
+    else if (new Date(chip.dataset.due) < now) { chip.className = 'st red'; chip.textContent = 'Due - not posted'; r++; }
+    else { chip.className = 'st'; chip.textContent = 'Scheduled'; y++; }
+  });
+  document.getElementById('c-green').textContent = g + ' posted';
+  document.getElementById('c-yellow').textContent = y + ' scheduled';
+  document.getElementById('c-red').textContent = r + ' due';
+  document.getElementById('c-todo').textContent = n + ' still to make';
+}
+function jump(id) { const c = document.querySelector('[data-pid="' + id + '"]'); if (c) c.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+document.querySelectorAll('.card[data-pid]').forEach(c => {
+  if (read('sf-' + c.dataset.pid)) { c.classList.add('done'); c.querySelector('.post').textContent = 'Posted ✓'; }
+});
+paint(); setInterval(paint, 60000);
+</script></body></html>
