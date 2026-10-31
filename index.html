@@ -1,0 +1,1767 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Post Plan · Nov-Dec 2026</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='%230d1a16'/><rect x='3' y='3' width='10' height='10' fill='%2306c167'/><rect x='8' y='8' width='5' height='5' fill='%232f6bff'/></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --accent:#06c167;--accent-dark:#047d42;--accent-soft:#e4f7ed;--accent-line:#a9e6c6;--blue:#2f6bff;
+ --sis:#1b3a5c;--sis-soft:#eaeff5;--f24:#0f7b6c;--f24-soft:#e6f4f1;
+ --ink:#0d1a16;--ink2:#3c4a44;--mute:#607069;--faint:#67766f;--line:#e3e6dd;--line2:#eef0e9;
+ --bg:#f1efe7;--card:#ffffff;--wash:#faf9f4;--tagbg:#eef0ea;
+ --red:#d9503f;--red-dark:#b03a2c;--red-soft:#fdefec;--red-line:rgba(217,80,63,.28);
+ --gold:#e0863a;--gold-dark:#9a5517;--gold-soft:#fdf3e7;
+ --shadow:0 1px 2px rgba(13,26,22,.04),0 1px 3px rgba(13,26,22,.03);
+ --shadow-card:0 1px 2px rgba(13,26,22,.04),0 10px 30px -10px rgba(13,26,22,.10);
+ --ring:0 0 0 4px rgba(6,193,103,.16);--barbg:rgba(241,239,231,.82)
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --accent-dark:#3ddc8f;--accent-soft:#12291f;--accent-line:#1f5a3c;
+ --sis:#9db8d8;--sis-soft:#1a2633;--f24:#5fc7b6;--f24-soft:#13292533;
+ --ink:#eef1ec;--ink2:#c3ccc7;--mute:#93a29b;--faint:#8a9992;--line:#26302c;--line2:#1d2522;
+ --bg:#0f1513;--card:#161e1b;--wash:#131a17;--tagbg:#1f2925;
+ --red-dark:#f08a7b;--red-soft:#2a1714;--red-line:rgba(240,138,123,.3);--gold-dark:#f0b06e;--gold-soft:#2a1f12;--barbg:rgba(15,21,19,.82)}}
+:root[data-theme="dark"]{
+ --accent-dark:#3ddc8f;--accent-soft:#12291f;--accent-line:#1f5a3c;
+ --sis:#9db8d8;--sis-soft:#1a2633;--f24:#5fc7b6;--f24-soft:#13292533;
+ --ink:#eef1ec;--ink2:#c3ccc7;--mute:#93a29b;--faint:#8a9992;--line:#26302c;--line2:#1d2522;
+ --bg:#0f1513;--card:#161e1b;--wash:#131a17;--tagbg:#1f2925;
+ --red-dark:#f08a7b;--red-soft:#2a1714;--red-line:rgba(240,138,123,.3);--gold-dark:#f0b06e;--gold-soft:#2a1f12;--barbg:rgba(15,21,19,.82)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink2);font:15px/1.6 "Plus Jakarta Sans",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;padding-bottom:64px}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+a{color:var(--accent-dark)}
+[lang=bn]{font-family:"Noto Sans Bengali","Plus Jakarta Sans",sans-serif}
+
+.bar{background:var(--barbg);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+.bar .wrap{display:flex;align-items:center;gap:14px;height:64px}
+.mark{font-weight:800;font-size:20px;letter-spacing:-.045em;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;flex:none}
+.mark span{color:var(--accent)}
+.mark::before{content:"";width:28px;height:28px;margin-right:9px;flex:none;background:linear-gradient(90deg,var(--accent) 0 50%,var(--blue) 50%);border:3px solid var(--ink);border-radius:4px;box-shadow:inset 0 -9px 0 0 rgba(13,26,22,.25)}
+.tabs{display:inline-flex;gap:3px;padding:4px;background:rgba(13,26,22,.05);border:1px solid var(--line);border-radius:13px}
+.tab{display:inline-flex;align-items:center;gap:7px;color:var(--mute);text-decoration:none;font-size:13px;font-weight:600;padding:6px 13px;border-radius:9px;border:1px solid transparent;white-space:nowrap;cursor:pointer;background:none;transition:color .16s,background .16s}
+.tab svg{width:14px;height:14px;opacity:.5}
+.tab:hover{color:var(--ink);background:rgba(255,255,255,.62)}
+.tab.on{color:var(--ink);font-weight:700;background:var(--card);border-color:var(--line);box-shadow:0 1px 2px rgba(13,26,22,.06),0 3px 8px -3px rgba(13,26,22,.10)}
+.tab.on svg{opacity:1;color:var(--accent)}
+.sp{flex:1}
+.live{display:inline-flex;align-items:center;gap:7px;flex:none;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;font-size:11px;font-weight:700;color:var(--ink);letter-spacing:.06em;text-transform:uppercase}
+.live i{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(6,193,103,.45)}70%{box-shadow:0 0 0 6px rgba(6,193,103,0)}100%{box-shadow:0 0 0 0 rgba(6,193,103,0)}}
+
+.head{display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;margin:48px 0 18px}
+.head .t{flex:1;min-width:260px}
+h1{font-size:36px;font-weight:800;letter-spacing:-.052em;color:var(--ink);line-height:1.15;display:inline}
+.cnt{font-size:15px;color:var(--faint);margin-left:8px;letter-spacing:-.01em}
+.lede{font-size:15px;color:var(--mute);margin-top:4px}
+.search{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 12px;width:272px;max-width:100%;box-shadow:var(--shadow)}
+.search svg{width:15px;height:15px;color:var(--faint);flex:none}
+.search input{border:0;outline:0;background:none;font:inherit;font-size:14px;color:var(--ink);flex:1;min-width:0}
+.search kbd{font:600 11px inherit;color:var(--faint);border:1px solid var(--line);border-radius:6px;padding:0 6px;background:var(--wash)}
+.search:focus-within{border-color:var(--accent-line);box-shadow:var(--ring)}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.chip{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:12px;font-weight:600;color:var(--ink2);cursor:pointer;transition:.15s}
+.chip i{width:6px;height:6px;border-radius:50%;background:var(--faint)}
+.chip.sisc i{background:var(--sis)}.chip.f24c i{background:var(--f24)}.chip.donec i{background:var(--accent)}.chip.blockedc i{background:var(--red)}
+.chip:hover{border-color:var(--accent-line);color:var(--ink)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.chip.on i{background:var(--bg)}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:36px;font-weight:800;letter-spacing:-.05em;color:var(--ink);line-height:1.1}
+.stat.done{background:var(--accent-soft);border-color:var(--accent-line)}.stat.done b{color:var(--accent-dark)}
+.stat.blocked{background:var(--red-soft);border-color:var(--red-line)}.stat.blocked b{color:var(--red-dark)}
+.stat span{font-size:13px;color:var(--mute);display:block;line-height:1.45}
+.ramp{display:flex;height:10px;border-radius:3px;overflow:hidden;margin:16px 0 6px;background:var(--line)}
+.ramp i{display:block;height:100%}
+.ramp .d{background:linear-gradient(90deg,var(--accent),var(--blue))}.ramp .b{background:var(--red)}
+.split{font-size:13px;color:var(--mute)}
+.split b{color:var(--ink);font-weight:700}
+
+h2{font-size:22px;font-weight:800;letter-spacing:-.04em;color:var(--ink);margin:44px 0 12px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+.weeks{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+.weeks th,.weeks td{text-align:left;padding:10px 16px;border-bottom:1px solid var(--line2)}
+.weeks th{font-size:11px;font-weight:700;color:var(--faint);text-transform:uppercase;letter-spacing:.06em;background:var(--wash)}
+.weeks tr:last-child td{border-bottom:0}
+.weeks td:first-child{font-weight:700;color:var(--ink)}
+.weeks .nx td:first-child::after{content:"next";margin-left:8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-dark);background:var(--accent-soft);padding:2px 7px;border-radius:6px}
+.mini{display:flex;height:6px;width:140px;border-radius:2px;overflow:hidden;background:var(--line)}
+.mini i{display:block}
+.steps{counter-reset:s}
+.step{padding:16px 18px;border-bottom:1px solid var(--line2)}
+.step:last-child{border-bottom:0}
+.step h3{font-size:15px;font-weight:700;color:var(--ink);letter-spacing:-.02em;display:flex;gap:10px;align-items:baseline}
+.step h3::before{counter-increment:s;content:counter(s);font-size:11px;font-weight:800;color:var(--accent-dark);background:var(--accent-soft);border-radius:6px;padding:1px 7px}
+.step p,.step li{font-size:14px;color:var(--ink2)}
+.step ul{list-style:none;margin-top:6px}
+.step li{padding:5px 0;border-top:1px dashed var(--line2);display:flex;gap:10px;flex-wrap:wrap}
+.step li:first-child{border-top:0}
+.step li .d{font-weight:700;color:var(--ink);min-width:52px;font-size:13px}
+.step li .b{font-size:12px;color:var(--mute);min-width:76px}
+.step li .n{color:var(--red-dark);font-size:13px;font-weight:600}
+.step li .h{flex:1;min-width:160px}
+
+.day{margin-top:18px}
+.dh{position:sticky;top:64px;z-index:5;background:rgba(241,239,231,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:10px 2px;border-bottom:1px solid var(--line);margin-bottom:10px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+:root[data-theme="dark"] .dh{background:rgba(15,21,19,.88)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .dh{background:rgba(15,21,19,.88)}}
+.dh b{font-size:16px;font-weight:800;color:var(--ink);letter-spacing:-.03em}
+.dh i{font-style:normal;font-size:13px;font-weight:500;color:var(--faint)}
+.dh .key{font-size:11px;font-weight:700;color:var(--gold-dark);background:var(--gold-soft);border-radius:7px;padding:2px 9px}
+.dh .dn{margin-left:auto;font-size:12px;font-weight:600;color:var(--faint)}
+
+.rec{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:10px;box-shadow:var(--shadow);transition:box-shadow .2s,transform .2s}
+.rec:hover{box-shadow:var(--shadow-card);transform:translateY(-1px)}
+.rec.done{background:var(--accent-soft);border-color:rgba(6,193,103,.32)}
+.rec.blocked{border-color:var(--red-line)}
+.bd{flex:1;min-width:0}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.tg{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;border-radius:7px;padding:3px 10px;background:var(--tagbg);color:var(--ink2);line-height:1.5}
+.tg svg{width:12px;height:12px}
+.tg.st-done{background:var(--card);color:var(--accent-dark);font-weight:700}
+.tg.st-blocked{background:var(--red-soft);color:var(--red-dark);font-weight:700}
+.tg.st-todo{background:var(--wash);color:var(--mute);font-weight:700;border:1px solid var(--line)}
+.tg.sis{background:var(--sis-soft);color:var(--sis)}
+.tg.f24{background:var(--f24-soft);color:var(--f24)}
+.tg.hu{background:var(--gold-soft);color:var(--gold-dark)}
+.tg.aw{background:rgba(47,107,255,.09);color:var(--blue)}
+.tg.boost{background:transparent;color:var(--mute);border:1px dashed var(--line)}
+.wt{font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-.01em;line-height:1.45}
+.oc{font-size:14px;color:var(--ink2);margin-top:2px}
+.need{font-size:13px;font-weight:600;color:var(--red-dark);margin-top:6px}
+.who{font-size:13px;color:var(--mute);margin-top:6px}
+.who b{color:var(--ink);font-weight:700}
+.th{flex:none;display:block;position:relative;width:76px;height:95px;border-radius:10px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+.th img{width:100%;height:100%;object-fit:cover;display:block}
+.th.vid::after{content:"";position:absolute;inset:0;margin:auto;width:26px;height:26px;border-radius:50%;background:rgba(13,26,22,.7) url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'><path d='M3.5 2.5v5l4-2.5z' fill='white'/></svg>") center/14px no-repeat}
+.empty{display:none;text-align:center;color:var(--mute);padding:40px 0;font-size:14px}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);text-align:center;font-size:13px;color:var(--mute)}
+
+@media (max-width:640px){
+ .wrap{padding:0 16px}
+ .tab span{display:none}.tab{padding:6px 10px}
+ .live{display:none}
+ .stats{grid-template-columns:1fr}
+ h1{font-size:28px}
+ .search{width:100%}
+ .weeks .mini{width:56px}.weeks th:nth-child(5),.weeks td:nth-child(5){display:none}
+ .weeks th,.weeks td{padding:9px 10px}
+ .th{width:60px;height:75px}
+}
+</style></head><body>
+<header class="bar"><div class="wrap">
+ <a class="mark" href="#top">Post<span>Plan</span></a>
+ <nav class="tabs" id="tabs">
+  <a class="tab on" href="#overview"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="5" height="5" rx="1"/><rect x="9" y="2" width="5" height="5" rx="1"/><rect x="2" y="9" width="5" height="5" rx="1"/><rect x="9" y="9" width="5" height="5" rx="1"/></svg><span>Overview</span></a>
+  <a class="tab" href="#d1101"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h9M5 8h9M5 12h9M2 4h.01M2 8h.01M2 12h.01"/></svg><span>November</span></a>
+  <a class="tab" href="#d1201"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h9M5 8h9M5 12h9M2 4h.01M2 8h.01M2 12h.01"/></svg><span>December</span></a>
+ </nav>
+ <span class="sp"></span>
+ <span class="live"><i></i>Updated 31 Oct</span>
+</div></header>
+
+<main class="wrap" id="top">
+<div class="head" id="overview">
+ <div class="t"><h1>The post plan</h1><span class="cnt">122 posts, 61 days</span>
+  <p class="lede">Suma International Services Ltd. and Flight24.co, 1 November to 31 December 2026.</p></div>
+</div>
+
+<div class="stats">
+ <div class="stat done"><b>14</b><span>Made, waiting for review. All of week 1 (1-7 Nov).</span></div>
+ <div class="stat blocked"><b>23</b><span>Need input first: real prices, dates, seats or a confirmation.</span></div>
+ <div class="stat"><b>85</b><span>To do. Nothing is stopping these.</span></div>
+</div>
+<div class="ramp"><i class="d" style="width:11.475409836065573%"></i><i class="b" style="width:18.852459016393443%"></i></div>
+<p class="split"><b>Suma</b> 7 made · 9 need input · 45 to do &nbsp;&nbsp; <b>Flight24.co</b> 7 made · 14 need input · 40 to do. Nothing approved or posted yet.</p>
+
+<h2>By week</h2>
+<div class="panel"><table class="weeks"><thead><tr><th>Week</th><th>Posts</th><th>Made</th><th>Need input</th><th>To do</th><th></th></tr></thead><tbody>
+<tr class=""><td><a href="#d1101" style="color:inherit;text-decoration:none">1-7 Nov</a></td><td>14</td><td>14</td><td>0</td><td>0</td><td><div class="mini"><i style="background:var(--accent);width:100%"></i><i style="background:var(--red);width:0%"></i></div></td></tr>
+<tr class="nx"><td><a href="#d1108" style="color:inherit;text-decoration:none">8-14 Nov</a></td><td>14</td><td>0</td><td>4</td><td>10</td><td><div class="mini"><i style="background:var(--accent);width:0%"></i><i style="background:var(--red);width:28.57142857142857%"></i></div></td></tr>
+<tr class=""><td><a href="#d1115" style="color:inherit;text-decoration:none">15-21 Nov</a></td><td>14</td><td>0</td><td>5</td><td>9</td><td><div class="mini"><i style="background:var(--accent);width:0%"></i><i style="background:var(--red);width:35.714285714285715%"></i></div></td></tr>
+<tr class=""><td><a href="#d1122" style="color:inherit;text-decoration:none">22-30 Nov</a></td><td>18</td><td>0</td><td>4</td><td>14</td><td><div class="mini"><i style="background:var(--accent);width:0%"></i><i style="background:var(--red);width:22.22222222222222%"></i></div></td></tr>
+<tr class=""><td><a href="#d1201" style="color:inherit;text-decoration:none">1-7 Dec</a></td><td>14</td><td>0</td><td>1</td><td>13</td><td><div class="mini"><i style="background:var(--accent);width:0%"></i><i style="background:var(--red);width:7.142857142857142%"></i></div></td></tr>
+<tr class=""><td><a href="#d1208" style="color:inherit;text-decoration:none">8-14 Dec</a></td><td>14</td><td>0</td><td>2</td><td>12</td><td><div class="mini"><i style="background:var(--accent);width:0%"></i><i style="background:var(--red);width:14.285714285714285%"></i></div></td></tr>
+<tr class=""><td><a href="#d1215" style="color:inherit;text-decoration:none">15-21 Dec</a></td><td>14</td><td>0</td><td>3</td><td>11</td><td><div class="mini"><i style="background:var(--accent);width:0%"></i><i style="background:var(--red);width:21.428571428571427%"></i></div></td></tr>
+<tr class=""><td><a href="#d1222" style="color:inherit;text-decoration:none">22-31 Dec</a></td><td>20</td><td>0</td><td>4</td><td>16</td><td><div class="mini"><i style="background:var(--accent);width:0%"></i><i style="background:var(--red);width:20%"></i></div></td></tr>
+</tbody></table></div>
+
+<h2>What's left</h2>
+<div class="panel steps">
+ <div class="step"><h3>Review week 1 before it goes live on 1 Nov</h3>
+  <p>14 posts: 4 videos and 10 statics. Check three facts first: the Indian visa fee line (3 Nov), the Nusuk rule for the Umrah visa (6-7 Nov), and St Martin's day trips in November with overnight stays from December (1 Nov).</p></div>
+ <div class="step"><h3>Make week 2 (8-14 Nov)</h3>
+  <ul><li><span class="d">Sun 8</span><span class="b">Suma</span><span class="h" lang="bn">নেপাল: এক ঘণ্টার একটু বেশি</span></li><li><span class="d">Sun 8</span><span class="b">Flight24.co</span><span class="h" lang="bn">সব এয়ারলাইনের ভাড়া এক সার্চে</span></li><li><span class="d">Mon 9</span><span class="b">Suma</span><span class="h" lang="bn">হাজীদের মুখে আমাদের সেবা</span></li><li><span class="d">Mon 9</span><span class="b">Flight24.co</span><span class="h" lang="bn">কাঠমান্ডুর টিকেট</span><span class="n">needs input</span></li><li><span class="d">Tue 10</span><span class="b">Suma</span><span class="h" lang="bn">উমরাহর খরচ: টাকা কোথায় যায়</span></li><li><span class="d">Tue 10</span><span class="b">Flight24.co</span><span class="h" lang="bn">মোবাইলেই টিকেট কাটুন</span><span class="n">Confirm the site works well on mobile</span></li><li><span class="d">Wed 11</span><span class="b">Suma</span><span class="h" lang="bn">কোন উমরাহ প্যাকেজ আপনার জন্য?</span><span class="n">Fill real prices</span></li><li><span class="d">Wed 11</span><span class="b">Flight24.co</span><span class="h" lang="bn">সুমা ইন্টারন্যাশনালের সহযোগী প্রতিষ্ঠান</span><span class="n">Fill years in business</span></li><li><span class="d">Thu 12</span><span class="b">Suma</span><span class="h" lang="bn">হজ ২০২৭: আপনার পরবর্তী ধাপ</span></li><li><span class="d">Thu 12</span><span class="b">Flight24.co</span><span class="h" lang="bn">থাইল্যান্ড-মালয়েশিয়া: টিকেট ও ভিসা</span></li><li><span class="d">Fri 13</span><span class="b">Suma</span><span class="h" lang="bn">মদিনায় একটি ভোর</span></li><li><span class="d">Fri 13</span><span class="b">Flight24.co</span><span class="h" lang="bn">জেদ্দা না মদিনা: উমরাহয় কোথায় নামবেন</span></li><li><span class="d">Sat 14</span><span class="b">Suma</span><span class="h" lang="bn">ডায়াবেটিস নিয়ে উমরাহ</span></li><li><span class="d">Sat 14</span><span class="b">Flight24.co</span><span class="h" lang="bn">এক মিনিটে ই-টিকেট</span></li></ul></div>
+ <div class="step"><h3>Send the missing numbers (23 posts wait on them)</h3>
+  <ul><li><span class="d">9 Nov</span><span class="b">Flight24.co</span><span class="h" lang="bn">কাঠমান্ডুর টিকেট</span><span class="n">details to confirm</span></li><li><span class="d">10 Nov</span><span class="b">Flight24.co</span><span class="h" lang="bn">মোবাইলেই টিকেট কাটুন</span><span class="n">Confirm the site works well on mobile</span></li><li><span class="d">11 Nov</span><span class="b">Suma</span><span class="h" lang="bn">কোন উমরাহ প্যাকেজ আপনার জন্য?</span><span class="n">Fill real prices</span></li><li><span class="d">11 Nov</span><span class="b">Flight24.co</span><span class="h" lang="bn">সুমা ইন্টারন্যাশনালের সহযোগী প্রতিষ্ঠান</span><span class="n">Fill years in business</span></li><li><span class="d">15 Nov</span><span class="b">Suma</span><span class="h" lang="bn">প্রথম উমরাহ: ৫টি সাধারণ প্রশ্ন</span><span class="n">details to confirm</span></li><li><span class="d">15 Nov</span><span class="b">Flight24.co</span><span class="h" lang="bn">ডিসেম্বর-জানুয়ারির উমরাহ টিকেট</span><span class="n">Fill fares</span></li><li><span class="d">16 Nov</span><span class="b">Suma</span><span class="h" lang="bn">রমজান উমরাহ প্যাকেজ ২০২৭</span><span class="n">Fill real prices</span></li><li><span class="d">17 Nov</span><span class="b">Flight24.co</span><span class="h" lang="bn">কলকাতার টিকেট, ভিসা সহায়তাসহ</span><span class="n">details to confirm</span></li><li><span class="d">20 Nov</span><span class="b">Flight24.co</span><span class="h" lang="bn">রজব-শাবানের উমরাহ টিকেট</span><span class="n">Fill dates</span></li><li><span class="d">22 Nov</span><span class="b">Flight24.co</span><span class="h" lang="bn">যেভাবে খুশি পেমেন্ট করুন</span><span class="n">Confirm payment methods</span></li><li><span class="d">23 Nov</span><span class="b">Flight24.co</span><span class="h" lang="bn">৩০ সেকেন্ডে ফ্লাইট২৪.কো</span><span class="n">details to confirm</span></li><li><span class="d">27 Nov</span><span class="b">Suma</span><span class="h" lang="bn">রজব-শাবানে উমরাহ: তারিখ ঘোষণা</span><span class="n">Fill dates</span></li><li><span class="d">30 Nov</span><span class="b">Suma</span><span class="h" lang="bn">রমজানের সিট সীমিত</span><span class="n">real numbers only</span></li><li><span class="d">3 Dec</span><span class="b">Flight24.co</span><span class="h" lang="bn">সেন্ট মার্টিন যেতে কক্সবাজারের টিকেট</span><span class="n">details to confirm</span></li><li><span class="d">11 Dec</span><span class="b">Suma</span><span class="h" lang="bn">রজব-শাবানে উমরাহ</span><span class="n">Fill dates and seats</span></li><li><span class="d">13 Dec</span><span class="b">Suma</span><span class="h" lang="bn">১৬ ডিসেম্বরের শেষ সিট</span><span class="n">Fill seats</span></li><li><span class="d">17 Dec</span><span class="b">Suma</span><span class="h" lang="bn">রমজান উমরাহ: শেষ সিট</span><span class="n">Real numbers only</span></li><li><span class="d">17 Dec</span><span class="b">Flight24.co</span><span class="h" lang="bn">রমজানের শেষ দশকের টিকেট</span><span class="n">details to confirm</span></li><li><span class="d">18 Dec</span><span class="b">Flight24.co</span><span class="h" lang="bn">বরফ দেখতে: শ্রীনগর ও বাগডোগরা</span><span class="n">details to confirm</span></li><li><span class="d">22 Dec</span><span class="b">Suma</span><span class="h" lang="bn">জানুয়ারির উমরাহ গ্রুপ</span><span class="n">Fill dates and seats</span></li><li><span class="d">24 Dec</span><span class="b">Flight24.co</span><span class="h" lang="bn">নতুন বছরে কক্সবাজার, সিলেট</span><span class="n">details to confirm</span></li><li><span class="d">25 Dec</span><span class="b">Flight24.co</span><span class="h" lang="bn">জানুয়ারির উমরাহ টিকেট</span><span class="n">Fill dates</span></li><li><span class="d">28 Dec</span><span class="b">Flight24.co</span><span class="h" lang="bn">জানুয়ারির জেদ্দা ভাড়া</span><span class="n">Fill fares</span></li></ul></div>
+ <div class="step"><h3>Other open items</h3>
+  <ul>
+   <li>Customer videos (9 Nov, 16 Nov, 8 Dec) need real pilgrim and traveller footage.</li>
+   <li>Facebook Lives (22 Nov Suma, 25 Nov Flight24.co) need a presenter.</li>
+   <li>Verify the meningitis vaccine age (20 Nov) and the wheelchair service (5 Dec).</li>
+   <li>The sumabd.com contact page still shows placeholder numbers.</li>
+   <li>The December simple plan PDF is not made yet.</li>
+  </ul></div>
+</div>
+
+<div class="head" style="margin-top:56px">
+ <div class="t"><h1>The calendar</h1><span class="cnt" id="shown">122 posts</span>
+  <p class="lede">Every post, by day. Filter or search.</p></div>
+ <label class="search"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg><input id="q" placeholder="Search the plan" autocomplete="off"><kbd>/</kbd></label>
+</div>
+<div class="chips" id="chips">
+ <button class="chip sisc" data-k="brand" data-v="SIS"><i></i>Suma International Services Ltd.</button>
+ <button class="chip f24c" data-k="brand" data-v="F24"><i></i>Flight24.co</button>
+ <button class="chip donec" data-k="st" data-v="done"><i></i>Made</button>
+ <button class="chip blockedc" data-k="st" data-v="blocked"><i></i>Needs input</button>
+ <button class="chip" data-k="st" data-v="todo">To do</button>
+ <button class="chip" data-k="tag" data-v="HU">Hajj &amp; Umrah</button>
+ <button class="chip" data-k="fmt" data-v="video">Videos</button>
+</div>
+<section class="day" data-date="2026-11-01" id="d1101">
+  <div class="dh"><b>Sunday</b> <i>1 Nov</i><span class="key">St Martin's opens</span><span class="dn">2/2 made</span></div>
+  <article class="rec done sis" data-st="done" data-brand="SIS" data-tag="" data-fmt="video" data-q="সেন্ট মার্টিন খুলছে আজ থেকে st martin's is open again. in november you can go for the day; from december you can stay the night. we arrange the travel pass, ship and hotel. video suma international services ltd. made  st martin's opens">
+  <div class="bd">
+    <div class="tags"><span class="tg st-done">Made</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Video</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">সেন্ট মার্টিন খুলছে আজ থেকে</div>
+    <div class="oc">St Martin's is open again. In November you can go for the day; from December you can stay the night. We arrange the travel pass, ship and hotel.</div>
+    
+    <div class="who">Posts at <b>1:30 PM</b> · Sun 1 Nov</div>
+    <div class="who">Files: <a href="media/2026-11-01_Suma_StMartin_Video_4x5.mp4" target="_blank">video</a></div>
+  </div>
+  <a class="th vid" href="media/2026-11-01_Suma_StMartin_Video_4x5.mp4" target="_blank"><img src="media/thumb_2026-11-01_SIS.jpg" alt="" loading="lazy"></a>
+</article>
+<article class="rec done f24" data-st="done" data-brand="F24" data-tag="AW" data-fmt="video" data-q="কোথায় যাবেন? এক কলেই টিকেট every airline's fare in one call or one click at flight24.co. domestic, international and umrah tickets. screen video flight24.co made  st martin's opens">
+  <div class="bd">
+    <div class="tags"><span class="tg st-done">Made</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Screen video</span><span class="tg aw">Brand</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">কোথায় যাবেন? এক কলেই টিকেট</div>
+    <div class="oc">Every airline's fare in one call or one click at flight24.co. Domestic, international and Umrah tickets.</div>
+    
+    <div class="who">Posts at <b>4:00 PM</b> · Sun 1 Nov</div>
+    <div class="who">Files: <a href="media/2026-11-01_Flight24_Tickets_Video_4x5.mp4" target="_blank">video</a></div>
+  </div>
+  <a class="th vid" href="media/2026-11-01_Flight24_Tickets_Video_4x5.mp4" target="_blank"><img src="media/thumb_2026-11-01_F24.jpg" alt="" loading="lazy"></a>
+</article>
+</section>
+<section class="day" data-date="2026-11-02" id="d1102">
+  <div class="dh"><b>Monday</b> <i>2 Nov</i><span class="dn">2/2 made</span></div>
+  <article class="rec done sis" data-st="done" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="রমজানের উমরাহ: সিট এখনই নিশ্চিত করুন ramadan starts around 9 february. the best hotels near the haram fill up first. book in november, travel stress-free. swipe suma international services ltd. made  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-done">Made</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">রমজানের উমরাহ: সিট এখনই নিশ্চিত করুন</div>
+    <div class="oc">Ramadan starts around 9 February. The best hotels near the Haram fill up first. Book in November, travel stress-free.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Mon 2 Nov</div>
+    <div class="who">Files: <a href="media/2026-11-02_Suma_Swipe_01.jpg" target="_blank">slide 1</a> · <a href="media/2026-11-02_Suma_Swipe_02.jpg" target="_blank">slide 2</a> · <a href="media/2026-11-02_Suma_Swipe_03.jpg" target="_blank">slide 3</a> · <a href="media/2026-11-02_Suma_Swipe_04.jpg" target="_blank">slide 4</a> · <a href="media/2026-11-02_Suma_Swipe_05.jpg" target="_blank">slide 5</a></div>
+  </div>
+  <a class="th" href="media/2026-11-02_Suma_Swipe_01.jpg" target="_blank"><img src="media/thumb_2026-11-02_SIS.jpg" alt="" loading="lazy"></a>
+</article>
+<article class="rec done f24" data-st="done" data-brand="F24" data-tag="" data-fmt="static" data-q="সেন্ট মার্টিন খুলে গেছে! st martin's opens 1 november. flight to cox's bazar, ship and hotel in one booking. swipe flight24.co made  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-done">Made</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Swipe</span></div>
+    <div class="wt" lang="bn">সেন্ট মার্টিন খুলে গেছে!</div>
+    <div class="oc">St Martin's opens 1 November. Flight to Cox's Bazar, ship and hotel in one booking.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Mon 2 Nov</div>
+    <div class="who">Files: <a href="media/2026-11-02_Flight24_Swipe_01.jpg" target="_blank">slide 1</a> · <a href="media/2026-11-02_Flight24_Swipe_02.jpg" target="_blank">slide 2</a> · <a href="media/2026-11-02_Flight24_Swipe_03.jpg" target="_blank">slide 3</a> · <a href="media/2026-11-02_Flight24_Swipe_04.jpg" target="_blank">slide 4</a></div>
+  </div>
+  <a class="th" href="media/2026-11-02_Flight24_Swipe_01.jpg" target="_blank"><img src="media/thumb_2026-11-02_F24.jpg" alt="" loading="lazy"></a>
+</article>
+</section>
+<section class="day" data-date="2026-11-03" id="d1103">
+  <div class="dh"><b>Tuesday</b> <i>3 Nov</i><span class="dn">2/2 made</span></div>
+  <article class="rec done sis" data-st="done" data-brand="SIS" data-tag="" data-fmt="static" data-q="ভারতের ট্যুরিস্ট ভিসা আবার চালু india is giving tourist visas to bangladeshis again. no visa fee, only tk 1,500 processing fee. send us your papers, we check them before you apply. photo post suma international services ltd. made  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-done">Made</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Photo post</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">ভারতের ট্যুরিস্ট ভিসা আবার চালু</div>
+    <div class="oc">India is giving tourist visas to Bangladeshis again. No visa fee, only Tk 1,500 processing fee. Send us your papers, we check them before you apply.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Tue 3 Nov</div>
+    <div class="who">Files: <a href="media/2026-11-03_Suma_Photo_01.jpg" target="_blank">image</a></div>
+  </div>
+  <a class="th" href="media/2026-11-03_Suma_Photo_01.jpg" target="_blank"><img src="media/thumb_2026-11-03_SIS.jpg" alt="" loading="lazy"></a>
+</article>
+<article class="rec done f24" data-st="done" data-brand="F24" data-tag="" data-fmt="static" data-q="ভিসা খুলেছে, এবার ভারতের টিকেট indian visas are open again. tickets to kolkata, delhi and chennai. photo post flight24.co made  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-done">Made</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span></div>
+    <div class="wt" lang="bn">ভিসা খুলেছে, এবার ভারতের টিকেট</div>
+    <div class="oc">Indian visas are open again. Tickets to Kolkata, Delhi and Chennai.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Tue 3 Nov</div>
+    <div class="who">Files: <a href="media/2026-11-03_Flight24_Photo_01.jpg" target="_blank">image</a></div>
+  </div>
+  <a class="th" href="media/2026-11-03_Flight24_Photo_01.jpg" target="_blank"><img src="media/thumb_2026-11-03_F24.jpg" alt="" loading="lazy"></a>
+</article>
+</section>
+<section class="day" data-date="2026-11-04" id="d1104">
+  <div class="dh"><b>Wednesday</b> <i>4 Nov</i><span class="dn">2/2 made</span></div>
+  <article class="rec done sis" data-st="done" data-brand="SIS" data-tag="" data-fmt="video" data-q="আপনার কাছের শাখায় আসুন dhaka, sylhet, moulvibazar, habiganj. come in and talk to us face to face. video suma international services ltd. made  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-done">Made</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Video</span></div>
+    <div class="wt" lang="bn">আপনার কাছের শাখায় আসুন</div>
+    <div class="oc">Dhaka, Sylhet, Moulvibazar, Habiganj. Come in and talk to us face to face.</div>
+    
+    <div class="who">Posts at <b>1:30 PM</b> · Wed 4 Nov</div>
+    <div class="who">Files: <a href="media/2026-11-04_Suma_Branches_Video_4x5.mp4" target="_blank">video</a></div>
+  </div>
+  <a class="th vid" href="media/2026-11-04_Suma_Branches_Video_4x5.mp4" target="_blank"><img src="media/thumb_2026-11-04_SIS.jpg" alt="" loading="lazy"></a>
+</article>
+<article class="rec done f24" data-st="done" data-brand="F24" data-tag="AW" data-fmt="static" data-q="টিকেট কাটুন ঘরে বসেই search, pick, pay: your ticket from home in three steps. swipe flight24.co made  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-done">Made</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Swipe</span><span class="tg aw">Brand</span></div>
+    <div class="wt" lang="bn">টিকেট কাটুন ঘরে বসেই</div>
+    <div class="oc">Search, pick, pay: your ticket from home in three steps.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Wed 4 Nov</div>
+    <div class="who">Files: <a href="media/2026-11-04_Flight24_Swipe_01.jpg" target="_blank">slide 1</a> · <a href="media/2026-11-04_Flight24_Swipe_02.jpg" target="_blank">slide 2</a> · <a href="media/2026-11-04_Flight24_Swipe_03.jpg" target="_blank">slide 3</a></div>
+  </div>
+  <a class="th" href="media/2026-11-04_Flight24_Swipe_01.jpg" target="_blank"><img src="media/thumb_2026-11-04_F24.jpg" alt="" loading="lazy"></a>
+</article>
+</section>
+<section class="day" data-date="2026-11-05" id="d1105">
+  <div class="dh"><b>Thursday</b> <i>5 Nov</i><span class="dn">2/2 made</span></div>
+  <article class="rec done sis" data-st="done" data-brand="SIS" data-tag="" data-fmt="static" data-q="উইকেন্ডে কক্সবাজার বা সিলেট need a quick weekend flight? call us for today's fare to cox's bazar, sylhet or saidpur. photo post suma international services ltd. made  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-done">Made</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Photo post</span></div>
+    <div class="wt" lang="bn">উইকেন্ডে কক্সবাজার বা সিলেট</div>
+    <div class="oc">Need a quick weekend flight? Call us for today's fare to Cox's Bazar, Sylhet or Saidpur.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Thu 5 Nov</div>
+    <div class="who">Files: <a href="media/2026-11-05_Suma_Photo_01.jpg" target="_blank">image</a></div>
+  </div>
+  <a class="th" href="media/2026-11-05_Suma_Photo_01.jpg" target="_blank"><img src="media/thumb_2026-11-05_SIS.jpg" alt="" loading="lazy"></a>
+</article>
+<article class="rec done f24" data-st="done" data-brand="F24" data-tag="" data-fmt="static" data-q="ঢাকা থেকে এক ঘণ্টায় সমুদ্রের পাড়ে weekend in cox's bazar? today's fares at flight24.co. photo post flight24.co made  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-done">Made</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span></div>
+    <div class="wt" lang="bn">ঢাকা থেকে এক ঘণ্টায় সমুদ্রের পাড়ে</div>
+    <div class="oc">Weekend in Cox's Bazar? Today's fares at flight24.co.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Thu 5 Nov</div>
+    <div class="who">Files: <a href="media/2026-11-05_Flight24_Photo_01.jpg" target="_blank">image</a></div>
+  </div>
+  <a class="th" href="media/2026-11-05_Flight24_Photo_01.jpg" target="_blank"><img src="media/thumb_2026-11-05_F24.jpg" alt="" loading="lazy"></a>
+</article>
+</section>
+<section class="day" data-date="2026-11-06" id="d1106">
+  <div class="dh"><b>Friday</b> <i>6 Nov</i><span class="dn">2/2 made</span></div>
+  <article class="rec done sis" data-st="done" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="উমরাহ ভিসার নতুন নিয়ম saudi arabia now gives the umrah visa only after your hotel and transport are booked on nusuk. we handle all of it in one package. swipe suma international services ltd. made  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-done">Made</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">উমরাহ ভিসার নতুন নিয়ম</div>
+    <div class="oc">Saudi Arabia now gives the Umrah visa only after your hotel and transport are booked on Nusuk. We handle all of it in one package.</div>
+    
+    <div class="who">Posts at <b>2:45 PM</b> · Fri 6 Nov</div>
+    <div class="who">Files: <a href="media/2026-11-06_Suma_Swipe_01.jpg" target="_blank">slide 1</a> · <a href="media/2026-11-06_Suma_Swipe_02.jpg" target="_blank">slide 2</a> · <a href="media/2026-11-06_Suma_Swipe_03.jpg" target="_blank">slide 3</a> · <a href="media/2026-11-06_Suma_Swipe_04.jpg" target="_blank">slide 4</a></div>
+  </div>
+  <a class="th" href="media/2026-11-06_Suma_Swipe_01.jpg" target="_blank"><img src="media/thumb_2026-11-06_SIS.jpg" alt="" loading="lazy"></a>
+</article>
+<article class="rec done f24" data-st="done" data-brand="F24" data-tag="HU" data-fmt="static" data-q="রমজানে উমরাহ? টিকেট আগে কাটুন ramadan umrah tickets to jeddah and madinah. book before the seats go. swipe flight24.co made  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-done">Made</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">রমজানে উমরাহ? টিকেট আগে কাটুন</div>
+    <div class="oc">Ramadan Umrah tickets to Jeddah and Madinah. Book before the seats go.</div>
+    
+    <div class="who">Posts at <b>9:00 PM</b> · Fri 6 Nov</div>
+    <div class="who">Files: <a href="media/2026-11-06_Flight24_Swipe_01.jpg" target="_blank">slide 1</a> · <a href="media/2026-11-06_Flight24_Swipe_02.jpg" target="_blank">slide 2</a> · <a href="media/2026-11-06_Flight24_Swipe_03.jpg" target="_blank">slide 3</a> · <a href="media/2026-11-06_Flight24_Swipe_04.jpg" target="_blank">slide 4</a></div>
+  </div>
+  <a class="th" href="media/2026-11-06_Flight24_Swipe_01.jpg" target="_blank"><img src="media/thumb_2026-11-06_F24.jpg" alt="" loading="lazy"></a>
+</article>
+</section>
+<section class="day" data-date="2026-11-07" id="d1107">
+  <div class="dh"><b>Saturday</b> <i>7 Nov</i><span class="dn">2/2 made</span></div>
+  <article class="rec done sis" data-st="done" data-brand="SIS" data-tag="" data-fmt="video" data-q="দুই দিনের কক্সবাজার two days is enough for the sea. flight, hotel and car: one package. video suma international services ltd. made  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-done">Made</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Video</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">দুই দিনের কক্সবাজার</div>
+    <div class="oc">Two days is enough for the sea. Flight, hotel and car: one package.</div>
+    
+    <div class="who">Posts at <b>1:30 PM</b> · Sat 7 Nov</div>
+    <div class="who">Files: <a href="media/2026-11-07_Suma_CoxsBazar_2Days_Video_4x5.mp4" target="_blank">video</a></div>
+  </div>
+  <a class="th vid" href="media/2026-11-07_Suma_CoxsBazar_2Days_Video_4x5.mp4" target="_blank"><img src="media/thumb_2026-11-07_SIS.jpg" alt="" loading="lazy"></a>
+</article>
+<article class="rec done f24" data-st="done" data-brand="F24" data-tag="HU" data-fmt="static" data-q="উমরাহ ভিসার নতুন নিয়মে চিন্তা? the nusuk rule in plain words: hotel and transport first, then the visa. swipe flight24.co made  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-done">Made</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">উমরাহ ভিসার নতুন নিয়মে চিন্তা?</div>
+    <div class="oc">The Nusuk rule in plain words: hotel and transport first, then the visa.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Sat 7 Nov</div>
+    <div class="who">Files: <a href="media/2026-11-07_Flight24_Swipe_01.jpg" target="_blank">slide 1</a> · <a href="media/2026-11-07_Flight24_Swipe_02.jpg" target="_blank">slide 2</a> · <a href="media/2026-11-07_Flight24_Swipe_03.jpg" target="_blank">slide 3</a></div>
+  </div>
+  <a class="th" href="media/2026-11-07_Flight24_Swipe_01.jpg" target="_blank"><img src="media/thumb_2026-11-07_F24.jpg" alt="" loading="lazy"></a>
+</article>
+</section>
+<section class="day" data-date="2026-11-08" id="d1108">
+  <div class="dh"><b>Sunday</b> <i>8 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="static" data-q="নেপাল: এক ঘণ্টার একটু বেশি nepal is just over an hour by air. visa on arrival, mountains, lakes and good food. swipe suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">নেপাল: এক ঘণ্টার একটু বেশি</div>
+    <div class="oc">Nepal is just over an hour by air. Visa on arrival, mountains, lakes and good food.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Sun 8 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="AW" data-fmt="static" data-q="সব এয়ারলাইনের ভাড়া এক সার্চে no more calling five airlines. one search at flight24.co shows them all. photo post flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span><span class="tg aw">Brand</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">সব এয়ারলাইনের ভাড়া এক সার্চে</div>
+    <div class="oc">No more calling five airlines. One search at flight24.co shows them all.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Sun 8 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-09" id="d1109">
+  <div class="dh"><b>Monday</b> <i>9 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="video" data-q="হাজীদের মুখে আমাদের সেবা hear it from them. customer video suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Customer video</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">হাজীদের মুখে আমাদের সেবা</div>
+    <div class="oc">Hear it from them.</div>
+    
+    <div class="who">Posts at <b>1:30 PM</b> · Mon 9 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec blocked f24" data-st="blocked" data-brand="F24" data-tag="" data-fmt="static" data-q="কাঠমান্ডুর টিকেট nepal is just over an hour away. dhaka to kathmandu fares at flight24.co. swipe flight24.co needs input  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Swipe</span></div>
+    <div class="wt" lang="bn">কাঠমান্ডুর টিকেট</div>
+    <div class="oc">Nepal is just over an hour away. Dhaka to Kathmandu fares at flight24.co.</div>
+    <div class="need">Waiting on: details to confirm</div>
+    <div class="who">Posts at <b>11:00 AM</b> · Mon 9 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-10" id="d1110">
+  <div class="dh"><b>Tuesday</b> <i>10 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="উমরাহর খরচ: টাকা কোথায় যায় visa, flight, hotel, transport and ziyarah: where your umrah money goes, line by line. swipe suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">উমরাহর খরচ: টাকা কোথায় যায়</div>
+    <div class="oc">Visa, flight, hotel, transport and ziyarah: where your Umrah money goes, line by line.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Tue 10 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec blocked f24" data-st="blocked" data-brand="F24" data-tag="AW" data-fmt="video" data-q="মোবাইলেই টিকেট কাটুন book your flight from your phone at flight24.co. [confirm the site works well on mobile] video flight24.co needs input [confirm the site works well on mobile] ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Video</span><span class="tg aw">Brand</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">মোবাইলেই টিকেট কাটুন</div>
+    <div class="oc">Book your flight from your phone at flight24.co. [Confirm the site works well on mobile]</div>
+    <div class="need">Waiting on: Confirm the site works well on mobile</div>
+    <div class="who">Posts at <b>4:00 PM</b> · Tue 10 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-11" id="d1111">
+  <div class="dh"><b>Wednesday</b> <i>11 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec blocked sis" data-st="blocked" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="কোন উমরাহ প্যাকেজ আপনার জন্য? three ramadan umrah options. pick the one that fits your family. [fill real prices] swipe suma international services ltd. needs input [fill real prices] ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">কোন উমরাহ প্যাকেজ আপনার জন্য?</div>
+    <div class="oc">Three Ramadan Umrah options. Pick the one that fits your family. [Fill real prices]</div>
+    <div class="need">Waiting on: Fill real prices</div>
+    <div class="who">Posts at <b>8:30 PM</b> · Wed 11 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec blocked f24" data-st="blocked" data-brand="F24" data-tag="AW" data-fmt="static" data-q="সুমা ইন্টারন্যাশনালের সহযোগী প্রতিষ্ঠান flight24.co is a sister concern of suma international services ltd. [fill years in business] photo post flight24.co needs input [fill years in business] ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span><span class="tg aw">Brand</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">সুমা ইন্টারন্যাশনালের সহযোগী প্রতিষ্ঠান</div>
+    <div class="oc">Flight24.co is a sister concern of Suma International Services Ltd. [Fill years in business]</div>
+    <div class="need">Waiting on: Fill years in business</div>
+    <div class="who">Posts at <b>11:00 AM</b> · Wed 11 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-12" id="d1112">
+  <div class="dh"><b>Thursday</b> <i>12 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="হজ ২০২৭: আপনার পরবর্তী ধাপ registered for hajj 2027 with us? here is what happens next and when. photo post suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Photo post</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">হজ ২০২৭: আপনার পরবর্তী ধাপ</div>
+    <div class="oc">Registered for Hajj 2027 with us? Here is what happens next and when.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Thu 12 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="static" data-q="থাইল্যান্ড-মালয়েশিয়া: টিকেট ও ভিসা bangkok and kuala lumpur tickets, with visa help from the same desk. swipe flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Swipe</span></div>
+    <div class="wt" lang="bn">থাইল্যান্ড-মালয়েশিয়া: টিকেট ও ভিসা</div>
+    <div class="oc">Bangkok and Kuala Lumpur tickets, with visa help from the same desk.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Thu 12 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-13" id="d1113">
+  <div class="dh"><b>Friday</b> <i>13 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="video" data-q="মদিনায় একটি ভোর a morning in madinah: fajr at masjid an-nabawi, then a quiet walk back to the hotel. video suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Video</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">মদিনায় একটি ভোর</div>
+    <div class="oc">A morning in Madinah: Fajr at Masjid an-Nabawi, then a quiet walk back to the hotel.</div>
+    
+    <div class="who">Posts at <b>2:45 PM</b> · Fri 13 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="HU" data-fmt="static" data-q="জেদ্দা না মদিনা: উমরাহয় কোথায় নামবেন jeddah or madinah: which airport suits your umrah plan. swipe flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">জেদ্দা না মদিনা: উমরাহয় কোথায় নামবেন</div>
+    <div class="oc">Jeddah or Madinah: which airport suits your Umrah plan.</div>
+    
+    <div class="who">Posts at <b>9:00 PM</b> · Fri 13 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-14" id="d1114">
+  <div class="dh"><b>Saturday</b> <i>14 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="ডায়াবেটিস নিয়ে উমরাহ six simple tips for parents with diabetes going for umrah. always talk to your doctor first. swipe suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">ডায়াবেটিস নিয়ে উমরাহ</div>
+    <div class="oc">Six simple tips for parents with diabetes going for Umrah. Always talk to your doctor first.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Sat 14 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="video" data-q="এক মিনিটে ই-টিকেট pay, and your e-ticket arrives in about a minute. screen video flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Screen video</span></div>
+    <div class="wt" lang="bn">এক মিনিটে ই-টিকেট</div>
+    <div class="oc">Pay, and your e-ticket arrives in about a minute.</div>
+    
+    <div class="who">Posts at <b>4:00 PM</b> · Sat 14 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-15" id="d1115">
+  <div class="dh"><b>Sunday</b> <i>15 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec blocked sis" data-st="blocked" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="প্রথম উমরাহ: ৫টি সাধারণ প্রশ্ন five questions every first-time pilgrim asks, answered simply. swipe suma international services ltd. needs input  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">প্রথম উমরাহ: ৫টি সাধারণ প্রশ্ন</div>
+    <div class="oc">Five questions every first-time pilgrim asks, answered simply.</div>
+    <div class="need">Waiting on: details to confirm</div>
+    <div class="who">Posts at <b>8:30 PM</b> · Sun 15 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec blocked f24" data-st="blocked" data-brand="F24" data-tag="HU" data-fmt="static" data-q="ডিসেম্বর-জানুয়ারির উমরাহ টিকেট umrah tickets for december and january, plus group fares. [fill fares] photo post flight24.co needs input [fill fares] ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">ডিসেম্বর-জানুয়ারির উমরাহ টিকেট</div>
+    <div class="oc">Umrah tickets for December and January, plus group fares. [Fill fares]</div>
+    <div class="need">Waiting on: Fill fares</div>
+    <div class="who">Posts at <b>11:00 AM</b> · Sun 15 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-16" id="d1116">
+  <div class="dh"><b>Monday</b> <i>16 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec blocked sis" data-st="blocked" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="রমজান উমরাহ প্যাকেজ ২০২৭ ramadan umrah 2027: what you get and what it costs. [fill real prices] swipe suma international services ltd. needs input [fill real prices] ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">রমজান উমরাহ প্যাকেজ ২০২৭</div>
+    <div class="oc">Ramadan Umrah 2027: what you get and what it costs. [Fill real prices]</div>
+    <div class="need">Waiting on: Fill real prices</div>
+    <div class="who">Posts at <b>8:30 PM</b> · Mon 16 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="AW" data-fmt="video" data-q="যাত্রীর মুখে ফ্লাইট২৪ a traveller who booked on flight24.co, in their own words. customer video flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Customer video</span><span class="tg aw">Brand</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">যাত্রীর মুখে ফ্লাইট২৪</div>
+    <div class="oc">A traveller who booked on Flight24.co, in their own words.</div>
+    
+    <div class="who">Posts at <b>4:00 PM</b> · Mon 16 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-17" id="d1117">
+  <div class="dh"><b>Tuesday</b> <i>17 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="video" data-q="দার্জিলিং-এ শীতের ভোর indian visas are open again. kolkata + darjeeling, 6 days. video suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Video</span></div>
+    <div class="wt" lang="bn">দার্জিলিং-এ শীতের ভোর</div>
+    <div class="oc">Indian visas are open again. Kolkata + Darjeeling, 6 days.</div>
+    
+    <div class="who">Posts at <b>1:30 PM</b> · Tue 17 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec blocked f24" data-st="blocked" data-brand="F24" data-tag="" data-fmt="static" data-q="কলকাতার টিকেট, ভিসা সহায়তাসহ kolkata tickets with indian visa help. darjeeling is back in season. swipe flight24.co needs input  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Swipe</span></div>
+    <div class="wt" lang="bn">কলকাতার টিকেট, ভিসা সহায়তাসহ</div>
+    <div class="oc">Kolkata tickets with Indian visa help. Darjeeling is back in season.</div>
+    <div class="need">Waiting on: details to confirm</div>
+    <div class="who">Posts at <b>11:00 AM</b> · Tue 17 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-18" id="d1118">
+  <div class="dh"><b>Wednesday</b> <i>18 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="আপনার উমরাহ ফাইল, ধাপে ধাপে passport to visa: every step of your umrah file, with a receipt and updates. [fill processing time] swipe suma international services ltd. to do [fill processing time] ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">আপনার উমরাহ ফাইল, ধাপে ধাপে</div>
+    <div class="oc">Passport to visa: every step of your Umrah file, with a receipt and updates. [Fill processing time]</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Wed 18 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="AW" data-fmt="static" data-q="মানুষের সাথে কথা বলুন: হটলাইন ১৬৭০৩ not a chatbot: call hotline 16703 and a real person helps with your booking. photo post flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span><span class="tg aw">Brand</span></div>
+    <div class="wt" lang="bn">মানুষের সাথে কথা বলুন: হটলাইন ১৬৭০৩</div>
+    <div class="oc">Not a chatbot: call Hotline 16703 and a real person helps with your booking.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Wed 18 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-19" id="d1119">
+  <div class="dh"><b>Thursday</b> <i>19 Nov</i><span class="key">Exams start</span><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="static" data-q="ছুটির আগেই প্ল্যান করুন school holidays are 20 to 29 december. book now while good hotels are available. photo post suma international services ltd. to do  exams start">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Photo post</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">ছুটির আগেই প্ল্যান করুন</div>
+    <div class="oc">School holidays are 20 to 29 December. Book now while good hotels are available.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Thu 19 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="static" data-q="স্কুল ছুটির ভাড়া এখনই দেখুন school holidays are 20 to 29 december. check fares early; they rise near the date. photo post flight24.co to do  exams start">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span></div>
+    <div class="wt" lang="bn">স্কুল ছুটির ভাড়া এখনই দেখুন</div>
+    <div class="oc">School holidays are 20 to 29 December. Check fares early; they rise near the date.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Thu 19 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-20" id="d1120">
+  <div class="dh"><b>Friday</b> <i>20 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="video" data-q="বাচ্চাদের নিয়ে উমরাহ going with children? every pilgrim aged 1 and above needs the meningitis vaccine. here are more tips. video suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Video</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">বাচ্চাদের নিয়ে উমরাহ</div>
+    <div class="oc">Going with children? Every pilgrim aged 1 and above needs the meningitis vaccine. Here are more tips.</div>
+    
+    <div class="who">Posts at <b>2:45 PM</b> · Fri 20 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec blocked f24" data-st="blocked" data-brand="F24" data-tag="HU" data-fmt="static" data-q="রজব-শাবানের উমরাহ টিকেট rajab and sha'ban umrah tickets to jeddah and madinah. [fill dates] photo post flight24.co needs input [fill dates] ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">রজব-শাবানের উমরাহ টিকেট</div>
+    <div class="oc">Rajab and Sha'ban Umrah tickets to Jeddah and Madinah. [Fill dates]</div>
+    <div class="need">Waiting on: Fill dates</div>
+    <div class="who">Posts at <b>9:00 PM</b> · Fri 20 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-21" id="d1121">
+  <div class="dh"><b>Saturday</b> <i>21 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="static" data-q="শীতের ৩টি ছুটি: নেপাল, ভুটান, থাইল্যান্ড three winter escapes close to home, with visa help for each. swipe suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span></div>
+    <div class="wt" lang="bn">শীতের ৩টি ছুটি: নেপাল, ভুটান, থাইল্যান্ড</div>
+    <div class="oc">Three winter escapes close to home, with visa help for each.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Sat 21 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="AW" data-fmt="static" data-q="টিকেটের শর্ত, সহজ কথায় change, refund, baggage: ticket rules in plain words before you pay. swipe flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Swipe</span><span class="tg aw">Brand</span></div>
+    <div class="wt" lang="bn">টিকেটের শর্ত, সহজ কথায়</div>
+    <div class="oc">Change, refund, baggage: ticket rules in plain words before you pay.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Sat 21 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-22" id="d1122">
+  <div class="dh"><b>Sunday</b> <i>22 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="video" data-q="লাইভে প্রশ্ন করুন live at 8:30 pm: ask anything about ramadan umrah. facebook live suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Facebook Live</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">লাইভে প্রশ্ন করুন</div>
+    <div class="oc">Live at 8:30 PM: ask anything about Ramadan Umrah.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Sun 22 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec blocked f24" data-st="blocked" data-brand="F24" data-tag="" data-fmt="static" data-q="যেভাবে খুশি পেমেন্ট করুন pay the way you like. [confirm payment methods] photo post flight24.co needs input [confirm payment methods] ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span></div>
+    <div class="wt" lang="bn">যেভাবে খুশি পেমেন্ট করুন</div>
+    <div class="oc">Pay the way you like. [Confirm payment methods]</div>
+    <div class="need">Waiting on: Confirm payment methods</div>
+    <div class="who">Posts at <b>11:00 AM</b> · Sun 22 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-23" id="d1123">
+  <div class="dh"><b>Monday</b> <i>23 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="মক্কার যিয়ারত: যা যা দেখাব the places in and around makkah our package takes you to. swipe suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">মক্কার যিয়ারত: যা যা দেখাব</div>
+    <div class="oc">The places in and around Makkah our package takes you to.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Mon 23 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec blocked f24" data-st="blocked" data-brand="F24" data-tag="AW" data-fmt="video" data-q="৩০ সেকেন্ডে ফ্লাইট২৪.কো what flight24.co is and how to book, in 30 seconds. video flight24.co needs input  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Video</span><span class="tg aw">Brand</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">৩০ সেকেন্ডে ফ্লাইট২৪.কো</div>
+    <div class="oc">What Flight24.co is and how to book, in 30 seconds.</div>
+    <div class="need">Waiting on: details to confirm</div>
+    <div class="who">Posts at <b>4:00 PM</b> · Mon 23 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-24" id="d1124">
+  <div class="dh"><b>Tuesday</b> <i>24 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="static" data-q="১৬ ডিসেম্বরে ৪ দিনের ছুটি take one day off on 17 december and get 4 days. book your flight now. photo post suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Photo post</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">১৬ ডিসেম্বরে ৪ দিনের ছুটি</div>
+    <div class="oc">Take one day off on 17 December and get 4 days. Book your flight now.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Tue 24 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="static" data-q="১৬-১৯ ডিসেম্বরের ভাড়া victory day plus one day off gives 4 days. fares to cox's bazar, sylhet, kathmandu, kolkata. photo post flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span></div>
+    <div class="wt" lang="bn">১৬-১৯ ডিসেম্বরের ভাড়া</div>
+    <div class="oc">Victory Day plus one day off gives 4 days. Fares to Cox's Bazar, Sylhet, Kathmandu, Kolkata.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Tue 24 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-25" id="d1125">
+  <div class="dh"><b>Wednesday</b> <i>25 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="video" data-q="শীতে উমরাহ, আরামে উমরাহ december and january are cooler in makkah. easier for elderly parents. video suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Video</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">শীতে উমরাহ, আরামে উমরাহ</div>
+    <div class="oc">December and January are cooler in Makkah. Easier for elderly parents.</div>
+    
+    <div class="who">Posts at <b>1:30 PM</b> · Wed 25 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="AW" data-fmt="video" data-q="লাইভ: কম ভাড়ায় টিকেট খোঁজার উপায় live at 8:30 pm: how to find good fares on flight24.co. ask anything. facebook live flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Facebook Live</span><span class="tg aw">Brand</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">লাইভ: কম ভাড়ায় টিকেট খোঁজার উপায়</div>
+    <div class="oc">Live at 8:30 PM: how to find good fares on Flight24.co. Ask anything.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Wed 25 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-26" id="d1126">
+  <div class="dh"><b>Thursday</b> <i>26 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="উমরাহ ধাপে ধাপে: ইহরাম umrah step by step, part 1: ihram. swipe suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">উমরাহ ধাপে ধাপে: ইহরাম</div>
+    <div class="oc">Umrah step by step, part 1: Ihram.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Thu 26 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="static" data-q="চিকিৎসার জন্য বিদেশ: টিকেট ও ভিসা going abroad for treatment? tickets and medical visa help together. photo post flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span></div>
+    <div class="wt" lang="bn">চিকিৎসার জন্য বিদেশ: টিকেট ও ভিসা</div>
+    <div class="oc">Going abroad for treatment? Tickets and medical visa help together.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Thu 26 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-27" id="d1127">
+  <div class="dh"><b>Friday</b> <i>27 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec blocked sis" data-st="blocked" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="রজব-শাবানে উমরাহ: তারিখ ঘোষণা our rajab and sha'ban umrah groups are open. [fill dates] photo post suma international services ltd. needs input [fill dates] ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Photo post</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">রজব-শাবানে উমরাহ: তারিখ ঘোষণা</div>
+    <div class="oc">Our Rajab and Sha'ban Umrah groups are open. [Fill dates]</div>
+    <div class="need">Waiting on: Fill dates</div>
+    <div class="who">Posts at <b>2:45 PM</b> · Fri 27 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="HU" data-fmt="static" data-q="জেদ্দা-মদিনার সরাসরি ফ্লাইট direct flights from dhaka to jeddah and madinah for your umrah. swipe flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">জেদ্দা-মদিনার সরাসরি ফ্লাইট</div>
+    <div class="oc">Direct flights from Dhaka to Jeddah and Madinah for your Umrah.</div>
+    
+    <div class="who">Posts at <b>9:00 PM</b> · Fri 27 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-28" id="d1128">
+  <div class="dh"><b>Saturday</b> <i>28 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="static" data-q="থাইল্যান্ড ৫ দিন thailand in 5 days: what is included and what is not. swipe suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">থাইল্যান্ড ৫ দিন</div>
+    <div class="oc">Thailand in 5 days: what is included and what is not.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Sat 28 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="static" data-q="ফ্লাইটের আগে পাসপোর্ট চেক check these 3 things on your passport before any international flight. swipe flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Swipe</span></div>
+    <div class="wt" lang="bn">ফ্লাইটের আগে পাসপোর্ট চেক</div>
+    <div class="oc">Check these 3 things on your passport before any international flight.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Sat 28 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-29" id="d1129">
+  <div class="dh"><b>Sunday</b> <i>29 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="প্যাকেজে কী কী থাকছে everything included in our umrah package, in plain words. swipe suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">প্যাকেজে কী কী থাকছে</div>
+    <div class="oc">Everything included in our Umrah package, in plain words.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Sun 29 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="video" data-q="বুকিং খুঁজুন, বদলান find your booking and ask for a change in a few taps. screen video flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Screen video</span></div>
+    <div class="wt" lang="bn">বুকিং খুঁজুন, বদলান</div>
+    <div class="oc">Find your booking and ask for a change in a few taps.</div>
+    
+    <div class="who">Posts at <b>4:00 PM</b> · Sun 29 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-11-30" id="d1130">
+  <div class="dh"><b>Monday</b> <i>30 Nov</i><span class="dn">0/2 made</span></div>
+  <article class="rec blocked sis" data-st="blocked" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="রমজানের সিট সীমিত ramadan umrah seats left: [real numbers only]. photo post suma international services ltd. needs input [real numbers only] ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Photo post</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">রমজানের সিট সীমিত</div>
+    <div class="oc">Ramadan Umrah seats left: [real numbers only].</div>
+    <div class="need">Waiting on: real numbers only</div>
+    <div class="who">Posts at <b>8:30 PM</b> · Mon 30 Nov</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="AW" data-fmt="static" data-q="নভেম্বরে পাশে থাকার জন্য ধন্যবাদ thank you to every traveller who booked with flight24.co in november. photo post flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span><span class="tg aw">Brand</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">নভেম্বরে পাশে থাকার জন্য ধন্যবাদ</div>
+    <div class="oc">Thank you to every traveller who booked with Flight24.co in November.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Mon 30 Nov</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-01" id="d1201">
+  <div class="dh"><b>Tuesday</b> <i>1 Dec</i><span class="key">Victory month</span><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="static" data-q="বিজয়ের মাস শুরু welcome to the month of victory. greeting card suma international services ltd. to do  victory month">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Greeting card</span></div>
+    <div class="wt" lang="bn">বিজয়ের মাস শুরু</div>
+    <div class="oc">Welcome to the month of victory.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Tue 1 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="static" data-q="বিজয়ের মাস welcome to the month of victory. greeting card flight24.co to do  victory month">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Greeting card</span></div>
+    <div class="wt" lang="bn">বিজয়ের মাস</div>
+    <div class="oc">Welcome to the month of victory.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Tue 1 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-02" id="d1202">
+  <div class="dh"><b>Wednesday</b> <i>2 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="video" data-q="রজব আসছে, রমজান কাছে rajab starts in about a week. ramadan is two months away. video suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Video</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">রজব আসছে, রমজান কাছে</div>
+    <div class="oc">Rajab starts in about a week. Ramadan is two months away.</div>
+    
+    <div class="who">Posts at <b>1:30 PM</b> · Wed 2 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="static" data-q="ছুটিতে বাড়ি ফেরার টিকেট going home for the holidays? domestic fares at flight24.co. photo post flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span></div>
+    <div class="wt" lang="bn">ছুটিতে বাড়ি ফেরার টিকেট</div>
+    <div class="oc">Going home for the holidays? Domestic fares at flight24.co.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Wed 2 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-03" id="d1203">
+  <div class="dh"><b>Thursday</b> <i>3 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="static" data-q="সেন্ট মার্টিনে রাত কাটানো যাবে from december you can stay overnight on st martin's. 3 days / 2 nights package. photo post suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Photo post</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">সেন্ট মার্টিনে রাত কাটানো যাবে</div>
+    <div class="oc">From December you can stay overnight on St Martin's. 3 days / 2 nights package.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Thu 3 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec blocked f24" data-st="blocked" data-brand="F24" data-tag="" data-fmt="static" data-q="সেন্ট মার্টিন যেতে কক্সবাজারের টিকেট overnight stays on st martin's start in december. your cox's bazar flight comes first. photo post flight24.co needs input  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span></div>
+    <div class="wt" lang="bn">সেন্ট মার্টিন যেতে কক্সবাজারের টিকেট</div>
+    <div class="oc">Overnight stays on St Martin's start in December. Your Cox's Bazar flight comes first.</div>
+    <div class="need">Waiting on: details to confirm</div>
+    <div class="who">Posts at <b>11:00 AM</b> · Thu 3 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-04" id="d1204">
+  <div class="dh"><b>Friday</b> <i>4 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="উমরাহ ধাপে ধাপে: তাওয়াফ umrah step by step, part 2: tawaf. swipe suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">উমরাহ ধাপে ধাপে: তাওয়াফ</div>
+    <div class="oc">Umrah step by step, part 2: Tawaf.</div>
+    
+    <div class="who">Posts at <b>2:45 PM</b> · Fri 4 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="static" data-q="কুয়াশায় ফ্লাইট দেরি হলে winter fog can delay morning flights. check your flight status and keep time for connections. photo post flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span></div>
+    <div class="wt" lang="bn">কুয়াশায় ফ্লাইট দেরি হলে</div>
+    <div class="oc">Winter fog can delay morning flights. Check your flight status and keep time for connections.</div>
+    
+    <div class="who">Posts at <b>9:00 PM</b> · Fri 4 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-05" id="d1205">
+  <div class="dh"><b>Saturday</b> <i>5 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="বয়স্ক বাবা-মায়ের উমরাহ umrah in comfort for elderly parents: wheelchair help, a guide on hand, hotel close to the haram. [confirm wheelchair service] photo post suma international services ltd. to do [confirm wheelchair service] ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Photo post</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">বয়স্ক বাবা-মায়ের উমরাহ</div>
+    <div class="oc">Umrah in comfort for elderly parents: wheelchair help, a guide on hand, hotel close to the Haram. [Confirm wheelchair service]</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Sat 5 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="HU" data-fmt="static" data-q="রমজান উমরাহ টিকেট: সিট আপডেট ramadan umrah seats to jeddah and madinah. [real numbers only] photo post flight24.co to do [real numbers only] ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">রমজান উমরাহ টিকেট: সিট আপডেট</div>
+    <div class="oc">Ramadan Umrah seats to Jeddah and Madinah. [Real numbers only]</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Sat 5 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-06" id="d1206">
+  <div class="dh"><b>Sunday</b> <i>6 Dec</i><span class="key">Exams end</span><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="video" data-q="পরীক্ষা শেষ, এবার ঘুরতে যাই exams are over. where are families going this holiday? video suma international services ltd. to do  exams end">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Video</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">পরীক্ষা শেষ, এবার ঘুরতে যাই</div>
+    <div class="oc">Exams are over. Where are families going this holiday?</div>
+    
+    <div class="who">Posts at <b>1:30 PM</b> · Sun 6 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="static" data-q="ছুটির ভাড়া খুলে গেছে exams end today. holiday fares are open at flight24.co. photo post flight24.co to do  exams end">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span></div>
+    <div class="wt" lang="bn">ছুটির ভাড়া খুলে গেছে</div>
+    <div class="oc">Exams end today. Holiday fares are open at flight24.co.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Sun 6 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-07" id="d1207">
+  <div class="dh"><b>Monday</b> <i>7 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="স্কুল ছুটিতে পরিবার নিয়ে উমরাহ take the whole family for umrah in the school holidays. [fill group date] swipe suma international services ltd. to do [fill group date] ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">স্কুল ছুটিতে পরিবার নিয়ে উমরাহ</div>
+    <div class="oc">Take the whole family for Umrah in the school holidays. [Fill group date]</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Mon 7 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="static" data-q="আগে কাটুন, কম দিন holiday fares go up close to the date. book early, pay less. photo post flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span></div>
+    <div class="wt" lang="bn">আগে কাটুন, কম দিন</div>
+    <div class="oc">Holiday fares go up close to the date. Book early, pay less.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Mon 7 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-08" id="d1208">
+  <div class="dh"><b>Tuesday</b> <i>8 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="video" data-q="বাবা-মাকে উমরাহয় পাঠান নিশ্চিন্তে send your parents for umrah with peace of mind. customer video suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Customer video</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">বাবা-মাকে উমরাহয় পাঠান নিশ্চিন্তে</div>
+    <div class="oc">Send your parents for Umrah with peace of mind.</div>
+    
+    <div class="who">Posts at <b>1:30 PM</b> · Tue 8 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="AW" data-fmt="video" data-q="আরেক যাত্রীর গল্প another traveller on booking with flight24.co. customer video flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Customer video</span><span class="tg aw">Brand</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">আরেক যাত্রীর গল্প</div>
+    <div class="oc">Another traveller on booking with Flight24.co.</div>
+    
+    <div class="who">Posts at <b>4:00 PM</b> · Tue 8 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-09" id="d1209">
+  <div class="dh"><b>Wednesday</b> <i>9 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="হজ ২০২৮ আগ্রহী তালিকা want to go for hajj in 2028? join our list and we will call you when registration opens. photo post suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Photo post</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">হজ ২০২৮ আগ্রহী তালিকা</div>
+    <div class="oc">Want to go for Hajj in 2028? Join our list and we will call you when registration opens.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Wed 9 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="AW" data-fmt="static" data-q="টিকেট, উমরাহ, ভিসা, ছুটি: এক জায়গায় tickets, umrah, visa help and holidays, all at flight24.co. photo post flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span><span class="tg aw">Brand</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">টিকেট, উমরাহ, ভিসা, ছুটি: এক জায়গায়</div>
+    <div class="oc">Tickets, Umrah, visa help and holidays, all at flight24.co.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Wed 9 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-10" id="d1210">
+  <div class="dh"><b>Thursday</b> <i>10 Dec</i><span class="key">Rajab begins</span><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="static" data-q="রজব মাস শুরু rajab has begun. ramadan is near. greeting card suma international services ltd. to do  rajab begins">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Greeting card</span></div>
+    <div class="wt" lang="bn">রজব মাস শুরু</div>
+    <div class="oc">Rajab has begun. Ramadan is near.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Thu 10 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="HU" data-fmt="static" data-q="রজব শুরু: উমরাহর টিকেট rajab has begun. umrah tickets to jeddah and madinah are filling. photo post flight24.co to do  rajab begins">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">রজব শুরু: উমরাহর টিকেট</div>
+    <div class="oc">Rajab has begun. Umrah tickets to Jeddah and Madinah are filling.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Thu 10 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-11" id="d1211">
+  <div class="dh"><b>Friday</b> <i>11 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec blocked sis" data-st="blocked" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="রজব-শাবানে উমরাহ rajab and sha'ban umrah groups. [fill dates and seats] swipe suma international services ltd. needs input [fill dates and seats] ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">রজব-শাবানে উমরাহ</div>
+    <div class="oc">Rajab and Sha'ban Umrah groups. [Fill dates and seats]</div>
+    <div class="need">Waiting on: Fill dates and seats</div>
+    <div class="who">Posts at <b>2:45 PM</b> · Fri 11 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="static" data-q="লম্বা ছুটির শেষ সিট last seats for 16-19 december: cox's bazar, sylhet, kathmandu, kolkata. swipe flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Swipe</span></div>
+    <div class="wt" lang="bn">লম্বা ছুটির শেষ সিট</div>
+    <div class="oc">Last seats for 16-19 December: Cox's Bazar, Sylhet, Kathmandu, Kolkata.</div>
+    
+    <div class="who">Posts at <b>9:00 PM</b> · Fri 11 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-12" id="d1212">
+  <div class="dh"><b>Saturday</b> <i>12 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="static" data-q="কাশ্মীরে তুষার snow in kashmir. indian visas are open again. 6 days package. swipe suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">কাশ্মীরে তুষার</div>
+    <div class="oc">Snow in Kashmir. Indian visas are open again. 6 days package.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Sat 12 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="AW" data-fmt="static" data-q="ই-টিকেট পড়বেন যেভাবে pnr, baggage, terminal: how to read your e-ticket. swipe flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Swipe</span><span class="tg aw">Brand</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">ই-টিকেট পড়বেন যেভাবে</div>
+    <div class="oc">PNR, baggage, terminal: how to read your e-ticket.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Sat 12 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-13" id="d1213">
+  <div class="dh"><b>Sunday</b> <i>13 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec blocked sis" data-st="blocked" data-brand="SIS" data-tag="" data-fmt="static" data-q="১৬ ডিসেম্বরের শেষ সিট last few seats for the victory day holiday. [fill seats] photo post suma international services ltd. needs input [fill seats] ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Photo post</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">১৬ ডিসেম্বরের শেষ সিট</div>
+    <div class="oc">Last few seats for the Victory Day holiday. [Fill seats]</div>
+    <div class="need">Waiting on: Fill seats</div>
+    <div class="who">Posts at <b>8:30 PM</b> · Sun 13 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="HU" data-fmt="static" data-q="উমরাহ যাত্রীর লাগেজ নিয়ম umrah baggage: zamzam, weight limits and what goes in the cabin. photo post flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">উমরাহ যাত্রীর লাগেজ নিয়ম</div>
+    <div class="oc">Umrah baggage: Zamzam, weight limits and what goes in the cabin.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Sun 13 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-14" id="d1214">
+  <div class="dh"><b>Monday</b> <i>14 Dec</i><span class="key">Intellectuals Day</span><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="static" data-q="শহীদ বুদ্ধিজীবী দিবস we remember. greeting card suma international services ltd. to do  intellectuals day">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Greeting card</span></div>
+    <div class="wt" lang="bn">শহীদ বুদ্ধিজীবী দিবস</div>
+    <div class="oc">We remember.</div>
+    
+    <div class="who">Posts at <b>10:00 AM</b> · Mon 14 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="static" data-q="শহীদ বুদ্ধিজীবী দিবস we remember. greeting card flight24.co to do  intellectuals day">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Greeting card</span></div>
+    <div class="wt" lang="bn">শহীদ বুদ্ধিজীবী দিবস</div>
+    <div class="oc">We remember.</div>
+    
+    <div class="who">Posts at <b>10:00 AM</b> · Mon 14 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-15" id="d1215">
+  <div class="dh"><b>Tuesday</b> <i>15 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="video" data-q="শ্রীমঙ্গলে শীতের সকাল holiday close to home: sylhet, sreemangal, jaflong. our sylhet branch plans it for you. video suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Video</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">শ্রীমঙ্গলে শীতের সকাল</div>
+    <div class="oc">Holiday close to home: Sylhet, Sreemangal, Jaflong. Our Sylhet branch plans it for you.</div>
+    
+    <div class="who">Posts at <b>1:30 PM</b> · Tue 15 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="video" data-q="পুরো পরিবারের টিকেট এক বুকিংয়ে book the whole family on one booking. screen video flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Screen video</span></div>
+    <div class="wt" lang="bn">পুরো পরিবারের টিকেট এক বুকিংয়ে</div>
+    <div class="oc">Book the whole family on one booking.</div>
+    
+    <div class="who">Posts at <b>4:00 PM</b> · Tue 15 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-16" id="d1216">
+  <div class="dh"><b>Wednesday</b> <i>16 Dec</i><span class="key">Victory Day</span><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="video" data-q="মহান বিজয় দিবস happy victory day. greeting video suma international services ltd. to do  victory day">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Greeting video</span></div>
+    <div class="wt" lang="bn">মহান বিজয় দিবস</div>
+    <div class="oc">Happy Victory Day.</div>
+    
+    <div class="who">Posts at <b>10:00 AM</b> · Wed 16 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="video" data-q="মহান বিজয় দিবস happy victory day. greeting video flight24.co to do  victory day">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Greeting video</span></div>
+    <div class="wt" lang="bn">মহান বিজয় দিবস</div>
+    <div class="oc">Happy Victory Day.</div>
+    
+    <div class="who">Posts at <b>10:00 AM</b> · Wed 16 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-17" id="d1217">
+  <div class="dh"><b>Thursday</b> <i>17 Dec</i><span class="key">4-day holiday</span><span class="dn">0/2 made</span></div>
+  <article class="rec blocked sis" data-st="blocked" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="রমজান উমরাহ: শেষ সিট last seats for ramadan umrah. [real numbers only] photo post suma international services ltd. needs input [real numbers only] 4-day holiday">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Photo post</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">রমজান উমরাহ: শেষ সিট</div>
+    <div class="oc">Last seats for Ramadan Umrah. [Real numbers only]</div>
+    <div class="need">Waiting on: Real numbers only</div>
+    <div class="who">Posts at <b>8:30 PM</b> · Thu 17 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec blocked f24" data-st="blocked" data-brand="F24" data-tag="HU" data-fmt="static" data-q="রমজানের শেষ দশকের টিকেট planning the last 10 nights in makkah? book jeddah tickets now. photo post flight24.co needs input  4-day holiday">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">রমজানের শেষ দশকের টিকেট</div>
+    <div class="oc">Planning the last 10 nights in Makkah? Book Jeddah tickets now.</div>
+    <div class="need">Waiting on: details to confirm</div>
+    <div class="who">Posts at <b>11:00 AM</b> · Thu 17 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-18" id="d1218">
+  <div class="dh"><b>Friday</b> <i>18 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="উমরাহ ধাপে ধাপে: সাঈ umrah step by step, part 3: sa'i and hair cut. swipe suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">উমরাহ ধাপে ধাপে: সাঈ</div>
+    <div class="oc">Umrah step by step, part 3: Sa'i and hair cut.</div>
+    
+    <div class="who">Posts at <b>2:45 PM</b> · Fri 18 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec blocked f24" data-st="blocked" data-brand="F24" data-tag="" data-fmt="static" data-q="বরফ দেখতে: শ্রীনগর ও বাগডোগরা snow trips: tickets to srinagar and bagdogra, with indian visa help. swipe flight24.co needs input  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Swipe</span></div>
+    <div class="wt" lang="bn">বরফ দেখতে: শ্রীনগর ও বাগডোগরা</div>
+    <div class="oc">Snow trips: tickets to Srinagar and Bagdogra, with Indian visa help.</div>
+    <div class="need">Waiting on: details to confirm</div>
+    <div class="who">Posts at <b>9:00 PM</b> · Fri 18 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-19" id="d1219">
+  <div class="dh"><b>Saturday</b> <i>19 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="হজ যাত্রীর চেকলিস্ট: জানুয়ারি-মার্চ hajj 2027 pilgrims: your january to march checklist. swipe suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">হজ যাত্রীর চেকলিস্ট: জানুয়ারি-মার্চ</div>
+    <div class="oc">Hajj 2027 pilgrims: your January to March checklist.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Sat 19 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="static" data-q="মার্চে ঈদের ছুটি: ভিসা ও টিকেট এখনই travelling for eid in march? apply for the visa and book now. photo post flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span></div>
+    <div class="wt" lang="bn">মার্চে ঈদের ছুটি: ভিসা ও টিকেট এখনই</div>
+    <div class="oc">Travelling for Eid in March? Apply for the visa and book now.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Sat 19 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-20" id="d1220">
+  <div class="dh"><b>Sunday</b> <i>20 Dec</i><span class="key">School holidays</span><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="static" data-q="ছুটি শুরু, প্যাকেজ রেডি school holidays start today. packages with dates still open. photo post suma international services ltd. to do  school holidays">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Photo post</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">ছুটি শুরু, প্যাকেজ রেডি</div>
+    <div class="oc">School holidays start today. Packages with dates still open.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Sun 20 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="static" data-q="ছুটির সপ্তাহ শুরু school holidays start today. live fares and seats at flight24.co. photo post flight24.co to do  school holidays">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span></div>
+    <div class="wt" lang="bn">ছুটির সপ্তাহ শুরু</div>
+    <div class="oc">School holidays start today. Live fares and seats at flight24.co.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Sun 20 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-21" id="d1221">
+  <div class="dh"><b>Monday</b> <i>21 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="video" data-q="একটি গ্রুপ রওনা দেওয়ার আগে what happens before a group leaves for umrah. video suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Video</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">একটি গ্রুপ রওনা দেওয়ার আগে</div>
+    <div class="oc">What happens before a group leaves for Umrah.</div>
+    
+    <div class="who">Posts at <b>1:30 PM</b> · Mon 21 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="static" data-q="বিদেশে কাজে ফেরার আগে going back to work abroad? check your visa and bmet clearance before you fly. swipe flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Swipe</span></div>
+    <div class="wt" lang="bn">বিদেশে কাজে ফেরার আগে</div>
+    <div class="oc">Going back to work abroad? Check your visa and BMET clearance before you fly.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Mon 21 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-22" id="d1222">
+  <div class="dh"><b>Tuesday</b> <i>22 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec blocked sis" data-st="blocked" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="জানুয়ারির উমরাহ গ্রুপ january umrah group: dates, hotel and seats. [fill dates and seats] photo post suma international services ltd. needs input [fill dates and seats] ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Photo post</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">জানুয়ারির উমরাহ গ্রুপ</div>
+    <div class="oc">January Umrah group: dates, hotel and seats. [Fill dates and seats]</div>
+    <div class="need">Waiting on: Fill dates and seats</div>
+    <div class="who">Posts at <b>8:30 PM</b> · Tue 22 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="static" data-q="প্রবাসীদের ওয়ান-ওয়ে টিকেট one-way fares to riyadh, jeddah, dubai and kuala lumpur. [fill fares] swipe flight24.co to do [fill fares] ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Swipe</span><span class="tg boost">Boost Tk 500</span></div>
+    <div class="wt" lang="bn">প্রবাসীদের ওয়ান-ওয়ে টিকেট</div>
+    <div class="oc">One-way fares to Riyadh, Jeddah, Dubai and Kuala Lumpur. [Fill fares]</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Tue 22 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-23" id="d1223">
+  <div class="dh"><b>Wednesday</b> <i>23 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="শেষ দশকে উমরাহ umrah in the last 10 nights of ramadan. small groups, hotels near haram. swipe suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">শেষ দশকে উমরাহ</div>
+    <div class="oc">Umrah in the last 10 nights of Ramadan. Small groups, hotels near Haram.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Wed 23 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="static" data-q="টিকেটের সাথে ভিসা সহায়তা india, thailand, malaysia: visa help with your ticket. swipe flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Swipe</span></div>
+    <div class="wt" lang="bn">টিকেটের সাথে ভিসা সহায়তা</div>
+    <div class="oc">India, Thailand, Malaysia: visa help with your ticket.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Wed 23 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-24" id="d1224">
+  <div class="dh"><b>Thursday</b> <i>24 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="static" data-q="নতুন বছর পাহাড়ে বা সাগরে start 2027 in the hills or by the sea. 2-3 day packages. photo post suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Photo post</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">নতুন বছর পাহাড়ে বা সাগরে</div>
+    <div class="oc">Start 2027 in the hills or by the sea. 2-3 day packages.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Thu 24 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec blocked f24" data-st="blocked" data-brand="F24" data-tag="" data-fmt="static" data-q="নতুন বছরে কক্সবাজার, সিলেট new year trip? cox's bazar and sylhet fares at flight24.co. photo post flight24.co needs input  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span></div>
+    <div class="wt" lang="bn">নতুন বছরে কক্সবাজার, সিলেট</div>
+    <div class="oc">New Year trip? Cox's Bazar and Sylhet fares at flight24.co.</div>
+    <div class="need">Waiting on: details to confirm</div>
+    <div class="who">Posts at <b>11:00 AM</b> · Thu 24 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-25" id="d1225">
+  <div class="dh"><b>Friday</b> <i>25 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="উমরাহ ধাপে ধাপে: মদিনা যিয়ারত umrah step by step, part 4: the places to visit in madinah. a blessed jumu'ah to all. swipe suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">উমরাহ ধাপে ধাপে: মদিনা যিয়ারত</div>
+    <div class="oc">Umrah step by step, part 4: the places to visit in Madinah. A blessed Jumu'ah to all.</div>
+    
+    <div class="who">Posts at <b>2:45 PM</b> · Fri 25 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec blocked f24" data-st="blocked" data-brand="F24" data-tag="HU" data-fmt="static" data-q="জানুয়ারির উমরাহ টিকেট january umrah tickets to jeddah and madinah. [fill dates] swipe flight24.co needs input [fill dates] ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">জানুয়ারির উমরাহ টিকেট</div>
+    <div class="oc">January Umrah tickets to Jeddah and Madinah. [Fill dates]</div>
+    <div class="need">Waiting on: Fill dates</div>
+    <div class="who">Posts at <b>9:00 PM</b> · Fri 25 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-26" id="d1226">
+  <div class="dh"><b>Saturday</b> <i>26 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="video" data-q="ডিসেম্বরের উমরাহ যাত্রীরা our december pilgrims. may allah accept. video suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Video</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,000</span></div>
+    <div class="wt" lang="bn">ডিসেম্বরের উমরাহ যাত্রীরা</div>
+    <div class="oc">Our December pilgrims. May Allah accept.</div>
+    
+    <div class="who">Posts at <b>1:30 PM</b> · Sat 26 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="AW" data-fmt="video" data-q="কেন ফ্লাইট২৪.কো tickets, umrah, visa and holidays from one place: why travellers choose flight24.co. video flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Video</span><span class="tg aw">Brand</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">কেন ফ্লাইট২৪.কো</div>
+    <div class="oc">Tickets, Umrah, visa and holidays from one place: why travellers choose Flight24.co.</div>
+    
+    <div class="who">Posts at <b>4:00 PM</b> · Sat 26 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-27" id="d1227">
+  <div class="dh"><b>Sunday</b> <i>27 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="static" data-q="ফেব্রুয়ারির ভারত ভ্রমণ going to india in february or march? book your visa appointment early. photo post suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Photo post</span></div>
+    <div class="wt" lang="bn">ফেব্রুয়ারির ভারত ভ্রমণ</div>
+    <div class="oc">Going to India in February or March? Book your visa appointment early.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Sun 27 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="AW" data-fmt="static" data-q="২০২৭-এর ছুটির ক্যালেন্ডার every 2027 public holiday, so you can plan trips early. swipe flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Swipe</span><span class="tg aw">Brand</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">২০২৭-এর ছুটির ক্যালেন্ডার</div>
+    <div class="oc">Every 2027 public holiday, so you can plan trips early.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Sun 27 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-28" id="d1228">
+  <div class="dh"><b>Monday</b> <i>28 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="HU" data-fmt="static" data-q="২০২৭ উমরাহ ক্যালেন্ডার rajab, sha'ban, ramadan or after eid: when to go for umrah in 2027. swipe suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span><span class="tg hu">Hajj &amp; Umrah</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">২০২৭ উমরাহ ক্যালেন্ডার</div>
+    <div class="oc">Rajab, Sha'ban, Ramadan or after Eid: when to go for Umrah in 2027.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Mon 28 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec blocked f24" data-st="blocked" data-brand="F24" data-tag="HU" data-fmt="static" data-q="জানুয়ারির জেদ্দা ভাড়া january fares to jeddah. [fill fares] photo post flight24.co needs input [fill fares] ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-blocked">Needs input</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span><span class="tg hu">Hajj &amp; Umrah</span></div>
+    <div class="wt" lang="bn">জানুয়ারির জেদ্দা ভাড়া</div>
+    <div class="oc">January fares to Jeddah. [Fill fares]</div>
+    <div class="need">Waiting on: Fill fares</div>
+    <div class="who">Posts at <b>11:00 AM</b> · Mon 28 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-29" id="d1229">
+  <div class="dh"><b>Tuesday</b> <i>29 Dec</i><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="static" data-q="২০২৭-এর ছুটির প্ল্যান plan your 2027 holidays now. swipe suma international services ltd. to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Swipe</span></div>
+    <div class="wt" lang="bn">২০২৭-এর ছুটির প্ল্যান</div>
+    <div class="oc">Plan your 2027 holidays now.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Tue 29 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="AW" data-fmt="static" data-q="২০২৭ শুরু হোক ফ্লাইট২৪.কো দিয়ে save flight24.co and hotline 16703 for every trip in 2027. photo post flight24.co to do  ">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Photo post</span><span class="tg aw">Brand</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">২০২৭ শুরু হোক ফ্লাইট২৪.কো দিয়ে</div>
+    <div class="oc">Save flight24.co and Hotline 16703 for every trip in 2027.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Tue 29 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-30" id="d1230">
+  <div class="dh"><b>Wednesday</b> <i>30 Dec</i><span class="key">School results</span><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="static" data-q="ফলাফলের দিনে অভিনন্দন congratulations to every student. a trip could be the best gift. photo post suma international services ltd. to do  school results">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Photo post</span></div>
+    <div class="wt" lang="bn">ফলাফলের দিনে অভিনন্দন</div>
+    <div class="oc">Congratulations to every student. A trip could be the best gift.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Wed 30 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="AW" data-fmt="video" data-q="২০২৬, ফ্লাইট২৪.কো-তে our 2026 with travellers, in one minute. video flight24.co to do  school results">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Video</span><span class="tg aw">Brand</span><span class="tg boost">Boost Tk 1,500</span></div>
+    <div class="wt" lang="bn">২০২৬, ফ্লাইট২৪.কো-তে</div>
+    <div class="oc">Our 2026 with travellers, in one minute.</div>
+    
+    <div class="who">Posts at <b>4:00 PM</b> · Wed 30 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<section class="day" data-date="2026-12-31" id="d1231">
+  <div class="dh"><b>Thursday</b> <i>31 Dec</i><span class="key">New Year's Eve</span><span class="dn">0/2 made</span></div>
+  <article class="rec todo sis" data-st="todo" data-brand="SIS" data-tag="" data-fmt="static" data-q="শুভ নববর্ষ ২০২৭ thank you for travelling with us in 2026. wishing you a blessed 2027. greeting card suma international services ltd. to do  new year's eve">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg sis"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5.5" r="2.2"/><path d="M2 13c.6-2.4 2.2-3.6 4-3.6s3.4 1.2 4 3.6"/><circle cx="11.5" cy="6" r="1.7"/><path d="M11 9.6c1.5 0 2.6.9 3 2.6"/></svg>Suma International Services Ltd.</span><span class="tg">Greeting card</span></div>
+    <div class="wt" lang="bn">শুভ নববর্ষ ২০২৭</div>
+    <div class="oc">Thank you for travelling with us in 2026. Wishing you a blessed 2027.</div>
+    
+    <div class="who">Posts at <b>8:30 PM</b> · Thu 31 Dec</div>
+    
+  </div>
+  
+</article>
+<article class="rec todo f24" data-st="todo" data-brand="F24" data-tag="" data-fmt="static" data-q="শুভ নববর্ষ ২০২৭ thank you for flying with us in 2026. wishing you a great 2027. greeting card flight24.co to do  new year's eve">
+  <div class="bd">
+    <div class="tags"><span class="tg st-todo">To do</span><span class="tg f24"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2 7 9M14 2l-4.5 12L7 9 2 6.5z"/></svg>Flight24.co</span><span class="tg">Greeting card</span></div>
+    <div class="wt" lang="bn">শুভ নববর্ষ ২০২৭</div>
+    <div class="oc">Thank you for flying with us in 2026. Wishing you a great 2027.</div>
+    
+    <div class="who">Posts at <b>11:00 AM</b> · Thu 31 Dec</div>
+    
+  </div>
+  
+</article>
+</section>
+<p class="empty" id="empty">No posts match.</p>
+<footer>© Miraz Mullick 2026 · Developed by Aykiz Intelligence</footer>
+</main>
+<script>
+const f={brand:null,st:null,tag:null,fmt:null};const q=document.getElementById('q');
+function apply(){const s=q.value.trim().toLowerCase();let n=0;
+ document.querySelectorAll('.rec').forEach(r=>{const ok=(!f.brand||r.dataset.brand===f.brand)&&(!f.st||r.dataset.st===f.st)&&(!f.tag||r.dataset.tag===f.tag)&&(!f.fmt||r.dataset.fmt===f.fmt)&&(!s||r.dataset.q.includes(s));r.style.display=ok?'':'none';if(ok)n++});
+ document.querySelectorAll('.day').forEach(d=>d.style.display=[...d.querySelectorAll('.rec')].some(r=>r.style.display!=='none')?'':'none');
+ document.getElementById('shown').textContent=n+(n===1?' post':' posts');document.getElementById('empty').style.display=n?'none':'block'}
+document.getElementById('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;const k=b.dataset.k,v=b.dataset.v;f[k]=f[k]===v?null:v;
+ document.querySelectorAll('.chip[data-k="'+k+'"]').forEach(c=>c.classList.toggle('on',f[k]===c.dataset.v));apply()});
+q.addEventListener('input',apply);
+addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==q){e.preventDefault();q.focus()}});
+const tabs=[...document.querySelectorAll('.tab')];
+addEventListener('scroll',()=>{const y=scrollY+140;const dec=document.getElementById('d1201').offsetTop,nov=document.getElementById('d1101').offsetTop;
+ const i=y>=dec?2:y>=nov?1:0;tabs.forEach((t,j)=>t.classList.toggle('on',i===j))},{passive:true});
+</script>
+</body></html>
